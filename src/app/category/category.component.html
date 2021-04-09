@@ -1,4 +1,12 @@
 <ActionBar title = "Category"></ActionBar>
 <StackLayout>
-    <Label text = "Category work"></Label>
+    <Label class="h2" text = "Category work!"></Label>
+    <ListView [items]="listName">
+        <ng-template let-item="item">
+          <StackLayout>
+            <Label class="h2" [text]="item"></Label>
+          </StackLayout>
+        </ng-template>
+      </ListView>
+    <Button class="h2"(tap)="tap()" text="Play"></Button>
 </StackLayout>

@@ -8,6 +8,7 @@ import { ItemDetailComponent } from './item/item-detail.component'
 import { MenuComponent } from'./menu/menu.component'
 import { CategoryComponent } from './category/category.component'
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
   { path: 'items', component: ItemsComponent },

@@ -7,6 +7,7 @@ import { ItemsComponent } from './item/items.component'
 import { ItemDetailComponent } from './item/item-detail.component'
 import { MenuComponent } from'./menu/menu.component'
 import { CategoryComponent } from './category/category.component'
+
 @NgModule({
   bootstrap: [AppComponent],
   imports: [NativeScriptModule, AppRoutingModule],
