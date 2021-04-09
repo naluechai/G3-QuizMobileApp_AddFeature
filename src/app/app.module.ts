@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { ItemsComponent } from './item/items.component'
 import { ItemDetailComponent } from './item/item-detail.component'
-
+import { MenuComponent } from'./menu/menu.component'
+import { CategoryComponent } from './category/category.component'
 @NgModule({
   bootstrap: [AppComponent],
   imports: [NativeScriptModule, AppRoutingModule],
-  declarations: [AppComponent, ItemsComponent, ItemDetailComponent],
+  declarations: [AppComponent, ItemsComponent, ItemDetailComponent,
+                MenuComponent, CategoryComponent, ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
 })
