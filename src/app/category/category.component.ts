@@ -16,6 +16,6 @@ export class CategoryComponent implements OnInit {
     this.listName = this.categoryService.getAllName();
   }
   tap(){
-    console.log(this.listName);
+    console.log(this.category_List[0].id); //[0].id .name or [1]
   }
 }
