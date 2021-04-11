@@ -53,7 +53,7 @@ export class CategoryService {
   getAllCategoryData():Array<CategoryForm>{
     return this.temp_Category;
   }
-  getAllName():Array<any>{
+  getListofCategory():Array<any>{
     var temp = new Array();
     for(let i = 0; i < this.temp_Category.length; i++) {
 
@@ -61,7 +61,7 @@ export class CategoryService {
     }
     return temp; 
   }
-  getSelectedCategoryData( name:string ): CategoryForm{
-    return this.temp_Category.filter((name) => this.temp_Category[0] === name)[0]
+  getSelectedCategoryData( id:number ): CategoryForm{
+    return this.temp_Category.filter((selected_category) => selected_category.id === id)[0]
   }
 }
