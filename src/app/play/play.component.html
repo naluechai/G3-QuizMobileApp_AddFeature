@@ -2,7 +2,7 @@
 <StackLayout>
     <StackLayout>
         <label class = "h1" [text] = "selected_question.question"></label>
-        <ListView [items] = "selected_question.choice">
+        <ListView height="300" [items] = "selected_question.choice">
             <ng-template let-item="item">
                 <StackLayout>
                   <Label class = "h2" [text] = "item.answer" (tap)="collectSelected(item.id)" ></Label>
@@ -12,6 +12,6 @@
 
     </StackLayout>
 
-    <button  class="h2" text = "next" (tap) = "selectedQuestion()"></button>
+    <button  class="h2" text = "next question" (tap) = "selectedQuestion()"></button>
     <!--<button  class="h2" text = "back" (tap) = "getTotalQuestions()"></button>-->
 </StackLayout>

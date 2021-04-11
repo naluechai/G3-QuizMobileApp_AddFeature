@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'category', component: CategoryComponent},
   { path: 'play/:id', component: PlayComponent },
-  { path: 'result', component: ResultComponent}
+  { path: 'result/:score', component: ResultComponent}
 ]
 
 @NgModule({

@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router'
   templateUrl: './menu.component.html',
 })
 export class MenuComponent implements OnInit {
+  
   constructor() {}
   ngOnInit(): void {
   }

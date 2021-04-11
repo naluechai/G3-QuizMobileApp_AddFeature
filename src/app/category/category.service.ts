@@ -40,7 +40,7 @@ export class CategoryService {
           { id:4, answer:"Night"}
         )},
     ),  answer: new Array<AnswerForm>(
-      { id:1, answer:1 },
+      { id:1, answer:4 },
       { id:2, answer:3 },
       { id:3, answer:1 },
       )  
