@@ -14,6 +14,7 @@ export class PlayComponent implements OnInit {
   title = "Let's Quiz";
   selected_category : CategoryForm;
   number:number = 0;
+  selectedAnswer:Array<any>;
   answerList:Array<any>;
   selected_question :QuestionForm;
 
@@ -31,16 +32,22 @@ export class PlayComponent implements OnInit {
   }
   selectedQuestion(){
     console.log(this.selected_category.questions[this.number]);
-
-    this.selected_question = this.selected_category.questions[this.number];
-    this.number+=1;
-    if (this.number == this.selected_category.questions.length+1){
+    if (this.number == this.selected_category.questions.length){
       //this.number = 0;
       this.router.navigate(['/result']);
       }
-    }
-  collectSelected(){
+    this.selected_question = this.selected_category.questions[this.number];
+    this.number+=1;
     
+    }
+  collectSelected( id:number ){
+    //const temp = new Array;
+    //temp.push(id);
+    //console.log(temp);
+    let tempSelectedAnswer = 0; 
+    tempSelectedAnswer = id;
+    console.log(tempSelectedAnswer);
+    //this.selectedAnswer
   }
   }
   

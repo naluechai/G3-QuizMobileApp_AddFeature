@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core'
 import { NativeScriptModule } from '@nativescript/angular'
+import { ResultComponent } from './result/result.component'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -13,7 +14,7 @@ import { PlayComponent } from './play/play.component'
   imports: [NativeScriptModule, AppRoutingModule],
   declarations: [AppComponent, ItemsComponent, ItemDetailComponent,
                 MenuComponent, CategoryComponent, PlayComponent,
-                 ],
+                ResultComponent,  ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
 })
