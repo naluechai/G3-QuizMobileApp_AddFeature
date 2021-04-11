@@ -7,7 +7,7 @@ import * as AppSettings from '@nativescript/core/application-settings'
 })
 export class CategoryService {
     private temp_Category = new Array<CategoryForm> (
-      { id:1 , name: "QuickMath", questions: new Array<QuestionForm>(
+      { id:0 , name: "QuickMath", questions: new Array<QuestionForm>(
         { id:1, question:"1+1=?", choice: new Array<ChoiceForm>(
           { id:1, answer:"2"},
           { id:2, answer:"5"},
@@ -32,7 +32,7 @@ export class CategoryService {
         { id:3, answer:1 },
         )
       },
-    { id: 2 , name: "Conversation", questions: new Array<QuestionForm>(
+    { id: 1 , name: "Conversation", questions: new Array<QuestionForm>(
         { id:1, question:"No light at 12 hour", choice: new Array<ChoiceForm>(
           { id:1, answer:"Day"},
           { id:2, answer:"Sleep"},
@@ -53,11 +53,15 @@ export class CategoryService {
   getAllCategoryData():Array<CategoryForm>{
     return this.temp_Category;
   }
-  getAllName():Array<string>{
+  getAllName():Array<any>{
     var temp = new Array();
     for(let i = 0; i < this.temp_Category.length; i++) {
-      temp.push(this.temp_Category[i].name);
+
+      temp.push(this.temp_Category[i]);
     }
     return temp; 
+  }
+  getSelectedCategoryData( name:string ): CategoryForm{
+    return this.temp_Category.filter((name) => this.temp_Category[0] === name)[0]
   }
 }
