@@ -14,7 +14,6 @@ export class CategoryComponent implements OnInit {
     this.category_List = this.categoryService.getListofCategory()
   }
   tap(){
-    //console.log(this.listName[0]);
     console.log(this.category_List[1].id);
     console.log(this.category_List[1].questions[0]);
   }

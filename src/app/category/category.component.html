@@ -1,6 +1,6 @@
 <ActionBar title = "Category"></ActionBar>
 <StackLayout>
-    <ListView [items]="category_List">
+    <ListView height="450" [items]="category_List">
         <ng-template let-item="item">
           <StackLayout>
             <Label class="h2" [text]="item.id + item.name" [nsRouterLink]="['/play', item.id]"  ></Label>
