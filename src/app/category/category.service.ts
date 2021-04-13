@@ -7,7 +7,7 @@ import * as AppSettings from '@nativescript/core/application-settings'
 })
 export class CategoryService {
     private temp_Category = new Array<CategoryForm> (
-      { id:0 , name: "QuickMath", questions: new Array<QuestionForm>(
+      { id:0 , name: "Test QuickMath", questions: new Array<QuestionForm>(
         { id:1, question:"1+1=?", choice: new Array<ChoiceForm>(
           { id:1, answer:"2"},
           { id:2, answer:"5"},
@@ -32,7 +32,7 @@ export class CategoryService {
         { id:3, answer:1 },
         )
       },
-    { id: 1 , name: "Test1Question", questions: new Array<QuestionForm>(
+    { id: 1 , name: "Test 1 Question", questions: new Array<QuestionForm>(
         { id:1, question:"2 is True", choice: new Array<ChoiceForm>(
           { id:1, answer:"1"},
           { id:2, answer:"2"},
@@ -41,7 +41,6 @@ export class CategoryService {
         )},
     ),  answer: new Array<AnswerForm>(
       { id:1, answer:2 },
-
       )  
     },
     )
@@ -62,5 +61,13 @@ export class CategoryService {
   }
   getSelectedCategoryData( id:number ): CategoryForm{
     return this.temp_Category.filter((selected_category) => selected_category.id === id)[0]
+  }
+  deleteCategory( id:number ){
+      for(let i = 0; i < this.temp_Category.length; i++) {
+        if(this.temp_Category[i].id == id) {
+            this.temp_Category.splice(i, 1);
+            break;
+        }
+    }
   }
 }

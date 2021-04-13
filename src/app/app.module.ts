@@ -9,12 +9,14 @@ import { ItemDetailComponent } from './item/item-detail.component'
 import { MenuComponent } from'./menu/menu.component'
 import { CategoryComponent } from './category/category.component'
 import { PlayComponent } from './play/play.component'
+import { AddComponent } from './add/add.component'
+
 @NgModule({
   bootstrap: [AppComponent],
   imports: [NativeScriptModule, AppRoutingModule],
   declarations: [AppComponent, ItemsComponent, ItemDetailComponent,
                 MenuComponent, CategoryComponent, PlayComponent,
-                ResultComponent,  ],
+                ResultComponent, AddComponent  ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
 })
