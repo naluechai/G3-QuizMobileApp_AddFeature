@@ -1,5 +1,5 @@
 <ActionBar [title]="title"></ActionBar>
-<StackLayout>
+<FlexLayout >
     <StackLayout>
         <label class = "h1" [text] = "selected_question.question"></label>
         <ListView height="300" [items] = "selected_question.choice">
@@ -14,4 +14,4 @@
 
     <button  class="h2" text = "next question" (tap) = "selectedQuestion()"></button>
     <!--<button  class="h2" text = "back" (tap) = "getTotalQuestions()"></button>-->
-</StackLayout>
+</FlexLayout>

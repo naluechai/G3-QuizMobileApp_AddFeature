@@ -32,17 +32,16 @@ export class CategoryService {
         { id:3, answer:1 },
         )
       },
-    { id: 1 , name: "Conversation", questions: new Array<QuestionForm>(
-        { id:1, question:"No light at 12 hour", choice: new Array<ChoiceForm>(
-          { id:1, answer:"Day"},
-          { id:2, answer:"Sleep"},
-          { id:3, answer:"Raining"},
-          { id:4, answer:"Night"}
+    { id: 1 , name: "Test1Question", questions: new Array<QuestionForm>(
+        { id:1, question:"2 is True", choice: new Array<ChoiceForm>(
+          { id:1, answer:"1"},
+          { id:2, answer:"2"},
+          { id:3, answer:"3"},
+          { id:4, answer:"4"}
         )},
     ),  answer: new Array<AnswerForm>(
-      { id:1, answer:4 },
-      { id:2, answer:3 },
-      { id:3, answer:1 },
+      { id:1, answer:2 },
+
       )  
     },
     )
