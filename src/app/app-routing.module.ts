@@ -9,7 +9,7 @@ import { MenuComponent } from'./menu/menu.component'
 import { CategoryComponent } from './category/category.component'
 import { PlayComponent } from './play/play.component'
 import { ResultComponent } from './result/result.component'
-import { AddComponent } from './add/add.component'
+import { EditComponent } from './edit/edit.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent},
   { path: 'play/:id', component: PlayComponent },
   { path: 'result/:id/:score', component: ResultComponent},
-  { path: 'add', component: AddComponent},
+  { path: 'edit', component: EditComponent},
 ]
 
 @NgModule({
