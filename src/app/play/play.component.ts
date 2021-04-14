@@ -52,13 +52,12 @@ export class PlayComponent implements OnInit {
     }
   collectSelected( id:number ){//select answer
     this.tempSelectedAnswer = id;
+    this.selectedQuestion();
   }
   checkAnswer(){//every time click next button (use selectedQuestion) check answer u click with ans if same +1
     if(this.tempSelectedAnswer == this.selected_question.answer){
       this.score +=1
     }
-    this.score +=0
-    
   }
-  }
+}
   

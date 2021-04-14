@@ -12,6 +12,7 @@ import { CategoryForm , QuestionForm} from '../category/category'
 export class DetailCategoryComponent implements OnInit {
   selected_category : CategoryForm;
   categoryID :number;
+  questionName:string="";
 
   constructor( private categoryService :CategoryService, private route: ActivatedRoute, private router : Router) {}
   ngOnInit(): void {
