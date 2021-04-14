@@ -4,10 +4,11 @@
         <ListView height="450" [items]="category_List">
             <ng-template let-item="item">
               <StackLayout>
-                <Label class="h2" [text]="item.name"></Label>
+                <Label class="h2" [text]="item.name" [nsRouterLink]="['/detail', item.id]"></Label>
               </StackLayout>
             </ng-template>
           </ListView>
-          <Button text="test"></Button>
+          <TextField class = "h2" [(ngModel)]="categoryName" hint="Enter New Category Name Here"></TextField>
+          <Button text="Add New Category" (tap) = "addNewCategory()" ></Button>
     </StackLayout>
 </FlexLaypout>

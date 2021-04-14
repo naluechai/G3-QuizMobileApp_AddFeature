@@ -3,15 +3,15 @@ import { ActivatedRoute } from '@angular/router'
 import { Router } from '@angular/router';
 
 import { CategoryService } from '../category/category.service'
-import { CategoryForm , QuestionForm} from '../category/category' 
-
+import { CategoryForm } from '../category/category'
 @Component({
-  selector: 'ns-edit',
-  templateUrl: './edit.component.html',
+
+  selector: 'ns-add',
+  templateUrl: './add.component.html',
 })
-export class EditComponent implements OnInit {
+export class AddComponent implements OnInit {
   category_List : Array<CategoryForm>;
-  categoryName:string
+
 
   constructor( private categoryService :CategoryService, private router : Router) {}
   ngOnInit(): void {
@@ -20,11 +20,9 @@ export class EditComponent implements OnInit {
   getCategoryData(){
     this.category_List = this.categoryService.getListofCategory()
   }
-  addNewCategory(){
-    if (this.categoryName !=""){
-      this.categoryService.addNewCategory( this.categoryName );
-      this.categoryName =""
-      this.getCategoryData();
-    }
+  test(){
+    console.log("work")
+    this.categoryService.addNewCategory("test")
+    this.getCategoryData();
   }
 }

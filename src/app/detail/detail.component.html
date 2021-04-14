@@ -1,0 +1,12 @@
+<ActionBar [title]="selected_category.name"></ActionBar>
+<FlexLayout>
+    <StackLayout>
+        <ListView height="300" [items] = selected_category.questions>
+            <ng-template let-item="item">
+                <StackLayout>
+                    <Label class = "h2" [text] = "item.question"></Label>
+                  </StackLayout>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+</FlexLayout>

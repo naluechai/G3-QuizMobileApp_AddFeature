@@ -7,6 +7,8 @@ import { CategoryComponent } from './category/category.component'
 import { PlayComponent } from './play/play.component'
 import { ResultComponent } from './result/result.component'
 import { EditComponent } from './edit/edit.component'
+import { AddComponent } from './edit/add.component'
+import { DetailComponent } from './detail/detail.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -15,6 +17,7 @@ const routes: Routes = [
   { path: 'play/:id', component: PlayComponent },
   { path: 'result/:id/:score', component: ResultComponent},
   { path: 'edit', component: EditComponent},
+  { path: 'detail/:id', component : DetailComponent}
 ]
 
 @NgModule({

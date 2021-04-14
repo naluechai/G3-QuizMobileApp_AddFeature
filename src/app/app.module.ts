@@ -9,12 +9,14 @@ import { MenuComponent } from'./menu/menu.component'
 import { CategoryComponent } from './category/category.component'
 import { PlayComponent } from './play/play.component'
 import { EditComponent } from './edit/edit.component'
+import { AddComponent } from './edit/add.component'
+import { DetailComponent } from './detail/detail.component'
 
 @NgModule({
   bootstrap: [AppComponent],
   imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule],
   declarations: [AppComponent,MenuComponent, CategoryComponent, PlayComponent,
-                ResultComponent, EditComponent  ],
+                ResultComponent, EditComponent, AddComponent, DetailComponent  ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
 })
