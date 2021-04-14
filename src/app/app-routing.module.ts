@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core'
 import { Routes } from '@angular/router'
 import { NativeScriptRouterModule } from '@nativescript/angular'
-
 import { MenuComponent } from'./menu/menu.component'
 import { CategoryComponent } from './category/category.component'
 import { PlayComponent } from './play/play.component'
 import { ResultComponent } from './result/result.component'
 import { EditComponent } from './edit/edit.component'
-import { AddComponent } from './edit/add.component'
 import { DetailCategoryComponent } from './detailCategory/detailCategory.component'
 import { DetailQuestionComponent } from './detailQuestion/detailQuestion.component'
 
