@@ -11,15 +11,21 @@ import { CategoryForm , QuestionForm} from '../category/category'
 })
 export class DetailQuestionComponent implements OnInit {
   selected_category : CategoryForm;
+  selected_question: QuestionForm;
+  title :string
 
   constructor( private categoryService :CategoryService, private route: ActivatedRoute, private router : Router) {}
   ngOnInit(): void {
-    const id = +this.route.snapshot.params.id
-    this.selected_category = this.categoryService.getSelectedCategoryData(id);
+    const Categoryid = +this.route.snapshot.params.id
+    const questionID = +this.route.snapshot.params.questionId
+    this.title = this.categoryService.getSelectedQuestionData( Categoryid, questionID).question
+    this.selected_question = this.categoryService.getSelectedQuestionData( Categoryid, questionID)
   }
-  delCategory(){
-    const id = +this.route.snapshot.params.id
-    this.categoryService.deleteCategory(id)
-    this.router.navigate(['/edit']);
+  delQuestion(){
+    const Categoryid = +this.route.snapshot.params.id
+    const questionID = +this.route.snapshot.params.questionId
+    this.categoryService.deleteQuestion(Categoryid ,questionID)
+    this.router.navigate(['/detail',Categoryid]);
   }
+  
 }

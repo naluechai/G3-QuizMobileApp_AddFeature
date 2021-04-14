@@ -64,6 +64,14 @@ export class CategoryService {
   getSelectedCategoryData( id:number ): CategoryForm{
     return this.temp_Category.filter((selected_category) => selected_category.id === id)[0]
   }
+  getSelectedQuestionData( CategoryID:number, QuestionID:number){
+    var tempCategory = this.getSelectedCategoryData(CategoryID)
+    for(let i = 0; i < tempCategory.questions.length; i++) {
+      if(tempCategory.questions[i].id == QuestionID) {
+          return tempCategory.questions[i]
+      }
+    }
+  }
   deleteCategory( id:number ){
       for(let i = 0; i < this.temp_Category.length; i++) {
         if(this.temp_Category[i].id == id) {

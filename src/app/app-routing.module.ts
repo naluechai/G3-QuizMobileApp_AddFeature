@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'result/:id/:score', component: ResultComponent},
   { path: 'edit', component: EditComponent},
   { path: 'detail/:id', component : DetailCategoryComponent},
-  { path: 'detail/:id/:question', component : DetailQuestionComponent}
+  { path: 'detail/:id/:questionId', component : DetailQuestionComponent}
 ]
 
 @NgModule({

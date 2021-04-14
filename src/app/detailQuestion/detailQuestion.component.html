@@ -1,1 +1,13 @@
-<Label text="work"></Label>
+<ActionBar [title]="title"></ActionBar>
+<FlexLayout>
+    <StackLayout>
+        <ListView height="300" [items] = selected_question.choice>
+            <ng-template let-item="item">
+                <StackLayout>
+                    <Label class = "h2" [text] = "item.choice" ></Label>
+                  </StackLayout>
+            </ng-template>
+        </ListView>
+        <Button text="Delete Question" (tap) = "delQuestion()"></Button>
+    </StackLayout>
+</FlexLayout>
