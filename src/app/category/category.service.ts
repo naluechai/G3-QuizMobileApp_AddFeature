@@ -43,7 +43,7 @@ export class CategoryService {
         ),
         answer:2
       },
-    ),  
+    )
     },
     )
 
@@ -79,7 +79,63 @@ export class CategoryService {
           tempCategory.questions.splice(i, 1);
           break;
       }
+    }
   }
-
+  deleteChoice( CategoryID:number , QuestionID:number, ChoiceID:number){ 
+    var tempCategory = this.getSelectedCategoryData(CategoryID)
+    for(let i = 0; i < tempCategory.questions.length; i++) {
+      if(tempCategory.questions[i].id == QuestionID) {
+          for (let j = 0 ; i < tempCategory.questions[i].choice.length ; j++){
+            if(tempCategory.questions[i].choice[j].id == ChoiceID){
+              tempCategory.questions[i].choice.splice(i, 1);
+              break;
+            }
+        }
+      }
+    }
+  }
+  editCategoryName( id:number, name:string){
+    var selectCategory = this.getSelectedCategoryData(id)
+    selectCategory.name = name;
+  }
+  editQuestionName( CategoryID:number, QuestionID:number, name:string  ){
+    var selectCategory = this.getSelectedCategoryData(CategoryID)
+    for(let i = 0; i < selectCategory.questions.length; i++) {
+      if(selectCategory.questions[i].id == QuestionID) {
+        selectCategory.questions[i].question = name
+        break;
+      }
+    }
+  }
+  editChoiceName( CategoryID:number , QuestionID:number, ChoiceID:number, name:string){
+    var tempCategory = this.getSelectedCategoryData(CategoryID)
+    for(let i = 0; i < tempCategory.questions.length; i++) {
+      if(tempCategory.questions[i].id == QuestionID) {
+          for (let j = 0 ; i < tempCategory.questions[i].choice.length ; j++){
+            if(tempCategory.questions[i].choice[j].id == ChoiceID){
+              tempCategory.questions[i].choice[j].choice = name
+              break;
+            }
+        }
+      }
+    }
+  }
+  getLastCategoryID(){
+    return this.temp_Category[this.temp_Category.length-1].id
+  }
+  addNewCategory( inputName:string){
+    var lastID = this.getLastCategoryID()+1
+    this.temp_Category.push(
+      { id:lastID , name:inputName, questions: new Array<QuestionForm>(
+      { id:1, question:undefined, choice: new Array<ChoiceForm>(
+        { id:1, choice:undefined},
+        { id:2, choice:undefined},
+        { id:3, choice:undefined},
+        { id:4, choice:undefined}
+      ),
+      answer:undefined
+    },
+  )
+  })
   }
 }

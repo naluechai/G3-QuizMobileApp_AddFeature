@@ -1,8 +1,13 @@
 <ActionBar title="edit menu"></ActionBar>
 <FlexLaypout>
     <StackLayout>
-        <label class = "h2" text="Enter Your Category Name"></label>
-        <TextField class = "h2" [(ngModel)]="categoryName" hint="Enter text..."></TextField>
-        <button text="Next" (tap) = "getNewCategory()"></button>
+        <ListView height="450" [items]="category_List">
+            <ng-template let-item="item">
+              <StackLayout>
+                <Label class="h2" [text]="item.name"></Label>
+              </StackLayout>
+            </ng-template>
+          </ListView>
+          <Button text="test"></Button>
     </StackLayout>
 </FlexLaypout>

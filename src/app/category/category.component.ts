@@ -18,12 +18,9 @@ export class CategoryComponent implements OnInit {
   getCategoryData(){
     this.category_List = this.categoryService.getListofCategory()
   }
-  delete(){
-    this.categoryService.deleteCategory(1);
-    this.getCategoryData();
-  }
-  deleteQuesiton(){
-    this.categoryService.deleteQuestion(0,2);
+  test(){
+    console.log("work")
+    this.categoryService.addNewCategory("test")
     this.getCategoryData();
   }
 }

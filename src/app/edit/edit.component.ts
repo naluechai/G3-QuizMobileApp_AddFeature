@@ -10,12 +10,14 @@ import { CategoryForm , QuestionForm} from '../category/category'
   templateUrl: './edit.component.html',
 })
 export class EditComponent implements OnInit {
-  NewCategory : Array<CategoryForm>
-  categoryName :string
-
-  constructor() {}
-  ngOnInit(): void {}
-  getNewCategory(){
-    console.log(this.categoryName)
+  category_List : Array<CategoryForm>;
+  
+  constructor( private categoryService :CategoryService, private router : Router) {}
+  ngOnInit(): void {
+    this.getCategoryData();
   }
+  getCategoryData(){
+    this.category_List = this.categoryService.getListofCategory()
+  }
+  
 }
