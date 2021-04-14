@@ -10,13 +10,15 @@ import { CategoryComponent } from './category/category.component'
 import { PlayComponent } from './play/play.component'
 import { EditComponent } from './edit/edit.component'
 import { AddComponent } from './edit/add.component'
-import { DetailComponent } from './detail/detail.component'
+import { DetailCategoryComponent } from './detailCategory/detailCategory.component'
+import { DetailQuestionComponent } from './detailQuestion/detailQuestion.component'
 
 @NgModule({
   bootstrap: [AppComponent],
   imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule],
   declarations: [AppComponent,MenuComponent, CategoryComponent, PlayComponent,
-                ResultComponent, EditComponent, AddComponent, DetailComponent  ],
+                ResultComponent, EditComponent, AddComponent, DetailCategoryComponent
+              ,DetailQuestionComponent  ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
 })

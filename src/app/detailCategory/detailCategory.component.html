@@ -4,9 +4,10 @@
         <ListView height="300" [items] = selected_category.questions>
             <ng-template let-item="item">
                 <StackLayout>
-                    <Label class = "h2" [text] = "item.question"></Label>
+                    <Label class = "h2" [text] = "item.question" ></Label>
                   </StackLayout>
             </ng-template>
         </ListView>
+        <Button text="Delete Category" (tap) = "delCategory()"></Button>
     </StackLayout>
 </FlexLayout>

@@ -11,7 +11,7 @@ import { CategoryForm , QuestionForm} from '../category/category'
 })
 export class EditComponent implements OnInit {
   category_List : Array<CategoryForm>;
-  categoryName:string
+  categoryName:string =""
 
   constructor( private categoryService :CategoryService, private router : Router) {}
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class EditComponent implements OnInit {
     this.category_List = this.categoryService.getListofCategory()
   }
   addNewCategory(){
-    if (this.categoryName !=""){
+    if (this.categoryName !="" ){
       this.categoryService.addNewCategory( this.categoryName );
       this.categoryName =""
       this.getCategoryData();
