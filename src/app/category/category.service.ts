@@ -72,4 +72,14 @@ export class CategoryService {
         }
     }
   }
+  deleteQuestion( CategoryID:number , QuestionID:number){
+    var tempCategory = this.getSelectedCategoryData(CategoryID)
+    for(let i = 0; i < tempCategory.questions.length; i++) {
+      if(tempCategory.questions[i].id == QuestionID) {
+          tempCategory.questions.splice(i, 1);
+          break;
+      }
+  }
+
+  }
 }

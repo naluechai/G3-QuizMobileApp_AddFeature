@@ -13,14 +13,17 @@ export class CategoryComponent implements OnInit {
   
   constructor( private categoryService :CategoryService, private router : Router) {}
   ngOnInit(): void {
-    this.category_List = this.categoryService.getListofCategory()
+    this.getCategoryData();
   }
-  tap(){
-    console.log(this.category_List[1].id);
-    console.log(this.category_List[1].questions[0]);
+  getCategoryData(){
+    this.category_List = this.categoryService.getListofCategory()
   }
   delete(){
     this.categoryService.deleteCategory(1);
-    this.router.navigate(['/category']);//didn't work
+    this.getCategoryData();
+  }
+  deleteQuesiton(){
+    this.categoryService.deleteQuestion(0,2);
+    this.getCategoryData();
   }
 }
