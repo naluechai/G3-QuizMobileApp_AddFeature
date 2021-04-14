@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { CategoryForm,QuestionForm,ChoiceForm, AnswerForm } from './category'
+import { CategoryForm,QuestionForm,ChoiceForm } from './category'
 import * as AppSettings from '@nativescript/core/application-settings'
 
 @Injectable({
@@ -9,39 +9,41 @@ export class CategoryService {
     private temp_Category = new Array<CategoryForm> (
       { id:0 , name: "Test QuickMath", questions: new Array<QuestionForm>(
         { id:1, question:"1+1=?", choice: new Array<ChoiceForm>(
-          { id:1, answer:"2"},
-          { id:2, answer:"5"},
-          { id:3, answer:"8"},
-          { id:4, answer:"7"}
-        )},
+          { id:1, choice:"2"},
+          { id:2, choice:"5"},
+          { id:3, choice:"8"},
+          { id:4, choice:"7"}
+        ),
+      answer:1
+      },
         { id:2, question:"1*8=?", choice: new Array<ChoiceForm>(
-          { id:1, answer:"21"},
-          { id:2, answer:"5"},
-          { id:3, answer:"8"},
-          { id:4, answer:"7"}
-        )},
+          { id:1, choice:"21"},
+          { id:2, choice:"5"},
+          { id:3, choice:"8"},
+          { id:4, choice:"7"}
+        ),
+      answer:3
+    },
         { id:3, question:"32/8*2", choice: new Array<ChoiceForm>(
-          { id:1, answer:"2"},
-          { id:2, answer:"7"},
-          { id:3, answer:"10"},
-          { id:4, answer:"0"}
-        )},
-      ), answer: new Array<AnswerForm>(
-        { id:1, answer:1 },
-        { id:2, answer:3 },
-        { id:3, answer:1 },
-        )
+          { id:1, choice:"2"},
+          { id:2, choice:"7"},
+          { id:3, choice:"10"},
+          { id:4, choice:"0"}
+        ),
+      answer:1
+    },
+      ),
       },
     { id: 1 , name: "Test 1 Question", questions: new Array<QuestionForm>(
         { id:1, question:"2 is True", choice: new Array<ChoiceForm>(
-          { id:1, answer:"1"},
-          { id:2, answer:"2"},
-          { id:3, answer:"3"},
-          { id:4, answer:"4"}
-        )},
-    ),  answer: new Array<AnswerForm>(
-      { id:1, answer:2 },
-      )  
+          { id:1, choice:"1"},
+          { id:2, choice:"2"},
+          { id:3, choice:"3"},
+          { id:4, choice:"4"}
+        ),
+        answer:2
+      },
+    ),  
     },
     )
 

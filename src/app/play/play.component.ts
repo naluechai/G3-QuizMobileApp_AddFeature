@@ -54,7 +54,7 @@ export class PlayComponent implements OnInit {
     this.tempSelectedAnswer = id;
   }
   checkAnswer(){//every time click next button (use selectedQuestion) check answer u click with ans if same +1
-    if(this.tempSelectedAnswer == this.selected_question.ans){
+    if(this.tempSelectedAnswer == this.selected_question.answer){
       this.score +=1
     }
     this.score +=0

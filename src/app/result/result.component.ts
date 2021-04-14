@@ -19,6 +19,6 @@ export class ResultComponent implements OnInit {
     const id = +this.route.snapshot.params.id
     this.selected_category = this.categoryService.getSelectedCategoryData(id);
     this.result = +this.route.snapshot.params.score
-    this.maxScore = this.selected_category.answer.length
+    this.maxScore = this.selected_category.questions.length
   }
 }
