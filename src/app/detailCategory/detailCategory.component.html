@@ -1,15 +1,15 @@
 <ActionBar [title]="selected_category.name"></ActionBar>
 <FlexLayout>
     <StackLayout>
-        <ListView height="300" [items] = selected_category.questions>
+        <ListView height="500" [items] = selected_category.questions>
             <ng-template let-item="item">
                 <StackLayout>
-                    <Label class = "h2" [text] = "item.question" [nsRouterLink]="['/detail', categoryID, item.id ]" ></Label>
+                    <Label class = "h2" [text] = "item.id + ': ' + item.question" [nsRouterLink]="['/detail', categoryID, item.id ]" ></Label>
                   </StackLayout>
             </ng-template>
         </ListView>
         <TextField class = "h2" [(ngModel)]="questionName" hint="New Question Name"></TextField>
-        <Button text="Add Question"></Button>
+        <Button text="Add Question" (tap) = "addQuestion()"></Button>
         <Button text="Delete Category" (tap) = "delCategory()"></Button>
     </StackLayout>
 </FlexLayout>

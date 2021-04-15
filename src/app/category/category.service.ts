@@ -45,6 +45,25 @@ export class CategoryService {
       },
     )
     },
+    { id: 2 , name: "ExampleQuestion", questions: new Array<QuestionForm>(
+      { id:1, question:"บางเดือนมี 30 วัน บางเดือนมี 31 วัน มีกี่เดือนที่มี 28 วัน ", choice: new Array<ChoiceForm>(
+        { id:1, choice:"2เดือน"},
+        { id:2, choice:"1เดือน"},
+        { id:3, choice:"4เดือน"},
+        { id:4, choice:"3เดือน"}
+      ),
+      answer:2
+    },
+    { id:2, question:"ถ้าคุณหมอให้ยามา 3 เม็ด แล้วบอกให้คุณกินยาทุกๆ ครึ่งชั่วโมงคุณต้องใช้เวลานานเท่าไหร่ถึงจะกินยาหมด ", choice: new Array<ChoiceForm>(
+      { id:1, choice:"1 ชั่วโมง"},
+      { id:2, choice:"1 ชั่วโมง 30 นาที"},
+      { id:3, choice:"2 ชั่วโมง"},
+      { id:4, choice:"2 ชั่วโมง 30 นาที"}
+    ),
+    answer:2
+    },
+  )
+  }
     )
 
     
@@ -81,10 +100,11 @@ export class CategoryService {
     }
   }
   deleteQuestion( CategoryID:number , QuestionID:number){
-    var tempCategory = this.getSelectedCategoryData(CategoryID)
-    for(let i = 0; i < tempCategory.questions.length; i++) {
-      if(tempCategory.questions[i].id == QuestionID) {
-          tempCategory.questions.splice(i, 1);
+    var selectCategory = this.getSelectedCategoryData(CategoryID)
+    //var selectQuestion = this.getSelectedQuestionData(CategoryID, QuestionID)
+    for(let i = 0; i < selectCategory.questions.length; i++) {
+      if(selectCategory.questions[i].id == QuestionID) {
+        selectCategory.questions.splice(i, 1);
           break;
       }
     }
@@ -128,6 +148,17 @@ export class CategoryService {
       }
     }
   }
+  editAnswer( CategoryID:number , QuestionID:number, NewAnswer:number){ //didnt test
+    var tempCategory = this.getSelectedCategoryData(CategoryID)
+    for(let i = 0; i < tempCategory.questions.length; i++) {
+      if(tempCategory.questions[i].id == QuestionID) {
+          tempCategory.questions[i].answer = NewAnswer
+          break;
+            }
+        }
+    } 
+  
+  
   getLastCategoryID(){
     return this.temp_Category[this.temp_Category.length-1].id
   }
@@ -146,4 +177,41 @@ export class CategoryService {
   )
   })
   }
+
+  getLastQuestionID( CategoryID:number ){ 
+    var selectCategory = this.getSelectedCategoryData(CategoryID)
+    return selectCategory.questions[selectCategory.questions.length-1].id
+  }
+
+  addNewQuestion( CategoryID:number ,name:string){ 
+    var selectCategory = this.getSelectedCategoryData(CategoryID)
+    var lastID = this.getLastQuestionID(CategoryID)+1
+    selectCategory.questions.push({
+       id: lastID, question: name, choice: new Array<ChoiceForm>(
+          { id:1, choice:undefined},
+          { id:2, choice:undefined},
+          { id:3, choice:undefined},
+          { id:4, choice:undefined}
+         
+       ),
+       answer:undefined
+    })
+    }
+
+  getLastChoiceID( CategoryID:number, QuestionID:number ){ 
+      var selectCategory = this.getSelectedCategoryData(CategoryID)
+      return selectCategory.questions[selectCategory.questions.length-1].id
+  }
+  addNewChoice( CategoryID:number , QuestionID:number, name:string){
+    var tempCategory = this.getSelectedCategoryData(CategoryID)
+    var lastChoiceID = this.getLastChoiceID( CategoryID, QuestionID )
+    for(let i = 0; i < tempCategory.questions.length; i++) {
+      if(tempCategory.questions[i].id == QuestionID) {
+         tempCategory.questions[i].choice.push({ id:lastChoiceID, choice:name})
+      }
+    }
+   
+  }
+
+  
 }

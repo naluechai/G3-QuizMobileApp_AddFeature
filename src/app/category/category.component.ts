@@ -18,9 +18,4 @@ export class CategoryComponent implements OnInit {
   getCategoryData(){
     this.category_List = this.categoryService.getListofCategory()
   }
-  test(){
-    console.log("work")
-    this.categoryService.addNewCategory("test")
-    this.getCategoryData();
-  }
 }

@@ -11,7 +11,7 @@ import { CategoryForm , QuestionForm} from '../category/category'
 })
 
 export class PlayComponent implements OnInit {
-  title = "Let's Quiz";
+  title:string;
   selected_category : CategoryForm;
   selected_question :QuestionForm; //A moment Question that show
   answerList:Array<any>;
@@ -27,6 +27,7 @@ export class PlayComponent implements OnInit {
     this.selected_category = this.categoryService.getSelectedCategoryData(id);
     this.lengthQuestion = this.selected_category.questions.length;
     this.selectedQuestion();
+    this.title = this.selected_category.name;
   }
   getConsoleLog(){
     console.log(this.answerList);

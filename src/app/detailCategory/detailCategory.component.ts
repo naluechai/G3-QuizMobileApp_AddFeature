@@ -18,11 +18,17 @@ export class DetailCategoryComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.params.id
     this.categoryID = id
-    this.selected_category = this.categoryService.getSelectedCategoryData(id);
+    this.selected_category = this.categoryService.getSelectedCategoryData(this.categoryID);
   }
   delCategory(){
-    const id = +this.route.snapshot.params.id
-    this.categoryService.deleteCategory(id)
+    this.categoryService.deleteCategory(this.categoryID)
     this.router.navigate(['/edit']);
+  }
+  addQuestion(){
+    if (this.questionName !=""){
+      this.categoryService.addNewQuestion(this.categoryID, this.questionName)
+      this.questionName="";
+    }
+    
   }
 }

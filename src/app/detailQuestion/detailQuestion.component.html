@@ -8,6 +8,8 @@
                   </StackLayout>
             </ng-template>
         </ListView>
+        <TextField class = "h2" [(ngModel)]="choiceName" hint="New Choice Name"></TextField>
+        <Button text="Add Choice" (tap) = "addChoice()"></Button>
         <Button text="Delete Question" (tap) = "delQuestion()"></Button>
     </StackLayout>
 </FlexLayout>
