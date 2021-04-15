@@ -13,6 +13,7 @@ export class ResultComponent implements OnInit {
   selected_category : CategoryForm;
   result:number;
   maxScore:number = 0;
+  id = this.route.snapshot.params.id;
 
   constructor(private route: ActivatedRoute, private categoryService : CategoryService) {}
   ngOnInit(): void {

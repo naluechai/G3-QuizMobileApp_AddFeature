@@ -3,5 +3,5 @@
     <Label class="h1" [text] = "'You got '+result +' Score'"></Label>
     <Label class="h1" [text] = "'From '+ maxScore + ' Question'"></Label>
     <Button text="Menu" [nsRouterLink] = "['/menu']"></Button>
-    <Button text="Retry"></Button>
+    <Button text="Retry" [nsRouterLink] = "['/play/'+id]"></Button>
 </StackLayout>
