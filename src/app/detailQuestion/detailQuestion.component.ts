@@ -16,6 +16,7 @@ export class DetailQuestionComponent implements OnInit {
   choiceName:string="";
   CategoryID:number;
   QuestionID:number;
+  answer :number ;
 
   constructor( private categoryService :CategoryService, private route: ActivatedRoute, private router : Router) {}
   ngOnInit(): void {
@@ -23,6 +24,7 @@ export class DetailQuestionComponent implements OnInit {
     this.QuestionID = +this.route.snapshot.params.questionId
     this.title = this.categoryService.getSelectedQuestionData( this.CategoryID, this.QuestionID).question
     this.selected_question = this.categoryService.getSelectedQuestionData( this.CategoryID, this.QuestionID)
+    this.answer = this.selected_question.answer
   }
   delQuestion(){
     this.categoryService.deleteQuestion(this.CategoryID ,this.QuestionID)
@@ -33,7 +35,12 @@ export class DetailQuestionComponent implements OnInit {
       this.categoryService.addNewChoice(this.CategoryID, this.QuestionID, this.choiceName)
       this.choiceName="";
     }
-    
+  }
+  changeAnswer(){
+    if (this.answer != null){
+      this.categoryService.editAnswer(this.CategoryID, this.QuestionID, this.answer)
+      this.router.navigate(['/detail',this.CategoryID]);
+    }
   }
   
 }

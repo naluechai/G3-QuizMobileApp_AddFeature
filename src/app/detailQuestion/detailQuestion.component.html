@@ -1,15 +1,20 @@
 <ActionBar [title]="title"></ActionBar>
 <FlexLayout>
     <StackLayout>
-        <ListView height="300" [items] = selected_question.choice>
+        <ListView height="400" [items] = selected_question.choice>
             <ng-template let-item="item">
                 <StackLayout>
-                    <Label class = "h2" [text] = "item.choice" ></Label>
+                    <Label class = "h2" [text] = "'Choice' + item.id + ': ' + item.choice" ></Label>
                   </StackLayout>
             </ng-template>
         </ListView>
-        <TextField class = "h2" [(ngModel)]="choiceName" hint="New Choice Name"></TextField>
-        <Button text="Add Choice" (tap) = "addChoice()"></Button>
-        <Button text="Delete Question" (tap) = "delQuestion()"></Button>
+        <StackLayout>
+            <TextField class="h2" [(ngModel)] = "answer" ></TextField>
+            <Button text="Change Answer" (tap) = "changeAnswer()" ></Button>
+
+            <TextField class = "h2" [(ngModel)]="choiceName" hint="New Choice Name"></TextField>
+            <Button text="Add Choice" (tap) = "addChoice()"></Button>
+            <Button text="Delete Question" (tap) = "delQuestion()"></Button>
+        </StackLayout>
     </StackLayout>
 </FlexLayout>
