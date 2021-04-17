@@ -16,8 +16,7 @@ export class DetailCategoryComponent implements OnInit {
 
   constructor( private categoryService :CategoryService, private route: ActivatedRoute, private router : Router) {}
   ngOnInit(): void {
-    const id = +this.route.snapshot.params.id
-    this.categoryID = id
+    this.categoryID = +this.route.snapshot.params.id
     this.selected_category = this.categoryService.getSelectedCategoryData(this.categoryID);
   }
   delCategory(){
@@ -29,6 +28,8 @@ export class DetailCategoryComponent implements OnInit {
       this.categoryService.addNewQuestion(this.categoryID, this.questionName)
       this.questionName="";
     }
-    
+  }
+  renameCategory(){
+    this.router.navigate(['/rename', this.selected_category.id, NaN, NaN]);
   }
 }

@@ -151,9 +151,12 @@ export class CategoryService {
     var tempCategory = this.getSelectedCategoryData(CategoryID)
     for(let i = 0; i < tempCategory.questions.length; i++) {
       if(tempCategory.questions[i].id == QuestionID) {
-          for (let j = 0 ; i < tempCategory.questions[i].choice.length ; j++){
+          for (let j = 0 ; j < tempCategory.questions[i].choice.length ; j++){
             if(tempCategory.questions[i].choice[j].id == ChoiceID){
+              console.log("Work")
               tempCategory.questions[i].choice[j].choice = name
+              console.log(name)
+              console.log(tempCategory.questions[i].choice[j].choice )
               break;
             }
         }
@@ -212,11 +215,16 @@ export class CategoryService {
 
   getLastChoiceID( CategoryID:number, QuestionID:number ){ 
       var selectCategory = this.getSelectedCategoryData(CategoryID)
-      return selectCategory.questions[selectCategory.questions.length-1].id
+      for (let i = 0 ; i < selectCategory.questions.length ; i++){
+        if (selectCategory.questions[i].id == QuestionID){
+          return selectCategory.questions[i].choice[selectCategory.questions[i].choice.length-1].id
+        }
+      } 
   }
   addNewChoice( CategoryID:number , QuestionID:number, name:string){
     var tempCategory = this.getSelectedCategoryData(CategoryID)
-    var lastChoiceID = this.getLastChoiceID( CategoryID, QuestionID )
+    var lastChoiceID = this.getLastChoiceID( CategoryID, QuestionID )+1
+    console.log(lastChoiceID)
     for(let i = 0; i < tempCategory.questions.length; i++) {
       if(tempCategory.questions[i].id == QuestionID) {
          tempCategory.questions[i].choice.push({ id:lastChoiceID, choice:name})

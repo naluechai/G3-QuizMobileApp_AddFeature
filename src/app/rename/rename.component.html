@@ -1,2 +1,6 @@
-<Label Class="h2" text="Edit Name"></Label>
-<TextField [(ngModel)] = "name"></TextField>
+<FlexLayout>
+    <StackLayout>
+        <TextField  class="h2" [(ngModel)] = "SelectedData"></TextField>
+        <button class = "h2" text="Edit" (tap) = "edit()"></button>
+    </StackLayout>
+</FlexLayout>

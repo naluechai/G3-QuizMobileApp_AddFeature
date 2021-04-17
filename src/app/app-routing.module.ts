@@ -19,7 +19,6 @@ const routes: Routes = [
   { path: 'edit', component: EditComponent},
   { path: 'detail/:id', component : DetailCategoryComponent},
   { path: 'detail/:id/:questionId', component : DetailQuestionComponent},
-  //{ path: 'rename/:id/', component : RenameComponent},
   { path: 'rename/:id/:questionId/:choiceId', component : RenameComponent}
 ]
 

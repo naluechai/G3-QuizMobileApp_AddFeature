@@ -1,10 +1,10 @@
-<ActionBar [title]="title"></ActionBar>
+<ActionBar [title]="title" (tap) = "renameQuestion()"></ActionBar>
 <FlexLayout>
     <StackLayout>
         <ListView height="400" [items] = selected_question.choice>
             <ng-template let-item="item">
                 <StackLayout>
-                    <Label class = "h2" [text] = "'Choice' + item.id + ': ' + item.choice" [nsRouterLink]="['/rename', CategoryID, QuestionID, item.id]" ></Label>
+                    <Label class = "h2" [text] = "'Choice' + item.id + ': ' + item.choice" (tap) = "rename(item.id)" ></Label> 
                   </StackLayout>
             </ng-template>
         </ListView>
