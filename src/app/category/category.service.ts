@@ -83,11 +83,23 @@ export class CategoryService {
   getSelectedCategoryData( id:number ): CategoryForm{
     return this.temp_Category.filter((selected_category) => selected_category.id === id)[0]
   }
-  getSelectedQuestionData( CategoryID:number, QuestionID:number){
+  getSelectedQuestionData( CategoryID:number, QuestionID:number): QuestionForm{
     var tempCategory = this.getSelectedCategoryData(CategoryID)
     for(let i = 0; i < tempCategory.questions.length; i++) {
       if(tempCategory.questions[i].id == QuestionID) {
           return tempCategory.questions[i]
+      }
+    }
+  }
+  getSelectedChoiceData( CategoryID:number, QuestionID:number, ChoiceID:number) :ChoiceForm{
+    var tempCategory = this.getSelectedCategoryData(CategoryID)
+    for(let i = 0; i < tempCategory.questions.length; i++) {
+      if(tempCategory.questions[i].id == QuestionID) {
+          for( let j = 0 ; j < tempCategory.questions[i].choice.length; j++){
+            if (tempCategory.questions[i].choice[j].id == ChoiceID){
+              return tempCategory.questions[i].choice[j]
+            }
+          }
       }
     }
   }
@@ -148,7 +160,7 @@ export class CategoryService {
       }
     }
   }
-  editAnswer( CategoryID:number , QuestionID:number, NewAnswer:number){ //didnt test
+  editAnswer( CategoryID:number , QuestionID:number, NewAnswer:number){ 
     var tempCategory = this.getSelectedCategoryData(CategoryID)
     for(let i = 0; i < tempCategory.questions.length; i++) {
       if(tempCategory.questions[i].id == QuestionID) {

@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'detail/:id', component : DetailCategoryComponent},
   { path: 'detail/:id/:questionId', component : DetailQuestionComponent},
   //{ path: 'rename/:id/', component : RenameComponent},
-  //{ path: 'rename/:id/:questionId', component : RenameComponent}
+  { path: 'rename/:id/:questionId/:choiceId', component : RenameComponent}
 ]
 
 @NgModule({

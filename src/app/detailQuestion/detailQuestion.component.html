@@ -4,7 +4,7 @@
         <ListView height="400" [items] = selected_question.choice>
             <ng-template let-item="item">
                 <StackLayout>
-                    <Label class = "h2" [text] = "'Choice' + item.id + ': ' + item.choice" ></Label>
+                    <Label class = "h2" [text] = "'Choice' + item.id + ': ' + item.choice" [nsRouterLink]="['/rename', CategoryID, QuestionID, item.id]" ></Label>
                   </StackLayout>
             </ng-template>
         </ListView>
