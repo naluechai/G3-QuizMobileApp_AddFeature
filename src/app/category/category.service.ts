@@ -66,22 +66,38 @@ export class CategoryService {
   }
     )
 
-    
-  constructor(){}
+  saveCategory : Array<CategoryForm>  
+
+  constructor(){
+    const firsttimerun = AppSettings.getBoolean("firsttimerun");
+    if(firsttimerun == null || firsttimerun == undefined){
+      this.saveCategory = this.temp_Category;
+      AppSettings.setString("CategoryData", JSON.stringify(this.saveCategory));
+      AppSettings.setBoolean("firsttimerun", false)
+    }
+    else {
+      this.saveCategory = JSON.parse(AppSettings.getString("CategoryData"));
+    }
+    console.log("work")
+  }
+  saveData(){
+    AppSettings.setString("CategoryData", JSON.stringify(this.saveCategory))
+  }
+  
 
   getAllCategoryData():Array<CategoryForm>{
-    return this.temp_Category;
+    return this.saveCategory;
   }
   getListofCategory():Array<any>{
     var temp = new Array();
-    for(let i = 0; i < this.temp_Category.length; i++) {
+    for(let i = 0; i < this.saveCategory.length; i++) {
 
-      temp.push(this.temp_Category[i]);
+      temp.push(this.saveCategory[i]);
     }
     return temp; 
   }
   getSelectedCategoryData( id:number ): CategoryForm{
-    return this.temp_Category.filter((selected_category) => selected_category.id === id)[0]
+    return this.saveCategory.filter((selected_category) => selected_category.id === id)[0]
   }
   getSelectedQuestionData( CategoryID:number, QuestionID:number): QuestionForm{
     var tempCategory = this.getSelectedCategoryData(CategoryID)
@@ -104,12 +120,13 @@ export class CategoryService {
     }
   }
   deleteCategory( id:number ){
-      for(let i = 0; i < this.temp_Category.length; i++) {
-        if(this.temp_Category[i].id == id) {
-            this.temp_Category.splice(i, 1);
+      for(let i = 0; i < this.saveCategory.length; i++) {
+        if(this.saveCategory[i].id == id) {
+            this.saveCategory.splice(i, 1);
             break;
         }
     }
+    this.saveData()
   }
   deleteQuestion( CategoryID:number , QuestionID:number){
     var selectCategory = this.getSelectedCategoryData(CategoryID)
@@ -120,6 +137,7 @@ export class CategoryService {
           break;
       }
     }
+    this.saveData()
   }
   deleteChoice( CategoryID:number , QuestionID:number, ChoiceID:number){ 
     var tempCategory = this.getSelectedCategoryData(CategoryID)
@@ -133,10 +151,12 @@ export class CategoryService {
         }
       }
     }
+    this.saveData()
   }
   editCategoryName( id:number, name:string){
     var selectCategory = this.getSelectedCategoryData(id)
     selectCategory.name = name;
+    this.saveData()
   }
   editQuestionName( CategoryID:number, QuestionID:number, name:string  ){
     var selectCategory = this.getSelectedCategoryData(CategoryID)
@@ -146,6 +166,7 @@ export class CategoryService {
         break;
       }
     }
+    this.saveData()
   }
   editChoiceName( CategoryID:number , QuestionID:number, ChoiceID:number, name:string){
     var tempCategory = this.getSelectedCategoryData(CategoryID)
@@ -162,6 +183,7 @@ export class CategoryService {
         }
       }
     }
+    this.saveData()
   }
   editAnswer( CategoryID:number , QuestionID:number, NewAnswer:number){ 
     var tempCategory = this.getSelectedCategoryData(CategoryID)
@@ -171,15 +193,16 @@ export class CategoryService {
           break;
             }
         }
+        this.saveData()
     } 
   
   
   getLastCategoryID(){
-    return this.temp_Category[this.temp_Category.length-1].id
+    return this.saveCategory[this.saveCategory.length-1].id
   }
   addNewCategory( inputName:string){
     var lastID = this.getLastCategoryID()+1
-    this.temp_Category.push(
+    this.saveCategory.push(
       { id:lastID , name:inputName, questions: new Array<QuestionForm>(
       { id:1, question:undefined, choice: new Array<ChoiceForm>(
         { id:1, choice:undefined},
@@ -191,6 +214,7 @@ export class CategoryService {
     },
   )
   })
+  this.saveData()
   }
 
   getLastQuestionID( CategoryID:number ){ 
@@ -211,6 +235,7 @@ export class CategoryService {
        ),
        answer:undefined
     })
+    this.saveData()
     }
 
   getLastChoiceID( CategoryID:number, QuestionID:number ){ 
@@ -230,8 +255,7 @@ export class CategoryService {
          tempCategory.questions[i].choice.push({ id:lastChoiceID, choice:name})
       }
     }
-   
+    this.saveData()
   }
-
   
 }
