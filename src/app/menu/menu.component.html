@@ -1,9 +1,32 @@
-<ActionBar hideActionBar title="Menu"></ActionBar>
-<FlexboxLayout style="align-items: center;justify-content: center;">
+<style>
+    Button{
+        width: 300 ;
+        height: 75;
+        color: black ;
+        background-color: gray;
+        font-size: 30px;
+    }
+    Label{
+        text-align: center;
+        color: white;
+        font-size: 60px;
+    }
+    ActionBar{
+        color: floralwhite;
+        font-family: Proxima Nova;
+        background-color: darkslateblue;
+    }
+    FlexboxLayout{
+        align-items: center;
+        justify-content: center;
+        background-color: darkslateblue;
+    }
+</style>
+<ActionBar title="Quiz MobileApp by Group3"></ActionBar>
+<FlexboxLayout>
     <StackLayout>
-        <Label class="h2" text="Quiz MobileApp by Group3"></Label>
-        <br>
-        <Button class="h2" text="Start" [nsRouterLink]="['/category']"></Button>
-        <Button class="h2" text="Edit Category" [nsRouterLink]="['/edit']"></Button>
+        <Label text="Menu" ></Label>
+        <Button text="Start" [nsRouterLink]="['/category']"></Button>
+        <Button text="Edit Category" [nsRouterLink]="['/edit']"></Button>
     </StackLayout>
 </FlexboxLayout>
