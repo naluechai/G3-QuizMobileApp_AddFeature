@@ -1,35 +1,12 @@
-<style>
-  Button{
-      width: 350 ;
-      height: 70;
-      color: black ;
-      background-color: gray;
-      font-size: 28px;
-      font-family: Proxima Nova;
-  }
-  Label{
-      text-align: center;
-      color: white;
-      font-size: 30px;
-      font-family: Proxima Nova;
-  }
-  ActionBar{
-      color: floralwhite;
-      font-family: Proxima Nova;
-      background-color: darkslateblue;
-  }
-  ListView{
-      background-color: darkslateblue;
-  }
-  TextField{
-    height: 200px;
-    font-size: 30px;
-    font-family: Proxima Nova;
-  }
-</style>
 <ActionBar title="Edit"></ActionBar>
-<FlexLaypout>
-    <StackLayout>
+<GridLayout rows="auto, * , *">
+
+  <GridLayout row =0 columns="* , auto" class= "add-bar">
+    <TextField [(ngModel)]="categoryName" hint="New Quiz Name" col="0"></TextField>
+    <Image class="add_item" src="~/app/img/add.png" (tap) = "addNewCategory()" col=1></Image>
+  </GridLayout>
+  
+    <StackLayout row =1 >
         <ListView height="500" [items]="category_List">
             <ng-template let-item="item">
               <StackLayout>
@@ -37,8 +14,7 @@
               </StackLayout>
             </ng-template>
           </ListView>
-          <TextField [(ngModel)]="categoryName" hint="New Quiz Name"></TextField>
-          <hr>
-          <Button text="Add New Quiz" (tap) = "addNewCategory()" ></Button>
     </StackLayout>
-</FlexLaypout>
+  <button class = "h2" text="back" (tap) = "back()" row = 2></button> 
+</GridLayout>
+

@@ -48,5 +48,7 @@ export class DetailQuestionComponent implements OnInit {
   renameQuestion(){
       this.router.navigate(['/rename',this.CategoryID, this.QuestionID, NaN]);
   }
-  
+  back(){
+    this.router.navigate(['/detail',this.CategoryID]);
+  }
 }

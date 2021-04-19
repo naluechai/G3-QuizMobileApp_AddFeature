@@ -5,11 +5,10 @@
 <GridLayout rows="auto, *">
     <GridLayout row =0 columns="* , auto" >
         <TextField class = "h2" [(ngModel)]="questionName" hint="New Question Name" col=0></TextField>
-        <Button text="Add Question" (tap) = "addQuestion()" col=1></Button>
+        <Image class="add_item" src="~/app/img/add.png" (tap) = "addQuestion()" col=1></Image>
     </GridLayout>
     
     <StackLayout row =1 >
-        
             <ListView height="500" [items] = selected_category.questions>
                 <ng-template let-item="item">
                     <StackLayout>
@@ -18,6 +17,7 @@
                 </ng-template>
             </ListView>
             
-            <Button text="Delete Category" (tap) = "delCategory()"></Button>
+            <Button text="Delete Quiz" (tap) = "delCategory()"></Button>
+            <button class = "h2" text="back" (tap) = "back()"></button>
     </StackLayout>
 </GridLayout>

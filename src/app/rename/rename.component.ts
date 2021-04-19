@@ -56,4 +56,20 @@ export class RenameComponent implements OnInit {
       }
     }
   }
+  cancle(){
+    if(this.SelectedData !="" && this.SelectedData != undefined){
+      if( Boolean(this.QuestionID) == false && Boolean(this.ChoiceID) == false  ){
+        this.categoryService.editCategoryName(this.CategoryID, this.SelectedData)
+        this.router.navigate(['/detail',this.CategoryID]);
+      }
+      else if ( Boolean(this.QuestionID) === true && Boolean(this.ChoiceID) == false  ){
+        this.categoryService.editQuestionName(this.CategoryID, this.QuestionID, this.SelectedData)
+        this.router.navigate(['/detail',this.CategoryID, this.QuestionID]);
+      }
+      else {
+        this.categoryService.editChoiceName(this.CategoryID, this.QuestionID, this.ChoiceID , this.SelectedData)
+        this.router.navigate(['/detail',this.CategoryID, this.QuestionID]);
+      }
+    }
+  }
 }

@@ -20,6 +20,67 @@ This is where the vast majority of your CSS code goes. */
 The following CSS rule changes the font size of all Buttons that have the
 "-primary" class modifier.
 */
+.menu{
+  text-align: center;
+        color: black;
+        font-size: 40;
+        font-family: Proxima Nova;
+}
+.ActionMenu{
+  color: #f0f0f0;
+  background-color:black;
+}
+.FlexMenu{
+  background-color:   #9b59b6     ;
+}
+.StackMenu{
+  background-color: #f0f0f0     ;
+}
+.menuButton1{
+  width: 200;
+  height: 100;
+  color: black ;
+  font-size: 20px;
+  background-color: gray;
+  font-family: Proxima Nova;
+}
+.menuButton2{
+  width: 200;
+  height: 100;
+  color: black ;
+  font-size: 20px;
+  background-color: gray;
+  font-family: Proxima Nova;
+}
+
+.Add-Button{
+  background-color: #CB1D00;
+  font-size: 20px;
+  font-family: Proxima Nova;
+}
+.add_item{
+  height: 25;
+  vertical-align: center;
+  margin-left: 10;
+  margin-right: 10;
+}
+
 Button.-primary {
   font-size: 18;
+}
+Button{
+  font-family: Proxima Nova;
+}
+Label{
+  font-family: Proxima Nova;
+}
+ActionBar{
+  font-family: Proxima Nova;
+}
+FlexboxLayout{
+  align-items: center;
+  justify-content: center;
+}
+TextField{
+  font-family: Proxima Nova;
 }

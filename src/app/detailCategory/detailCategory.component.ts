@@ -32,4 +32,7 @@ export class DetailCategoryComponent implements OnInit {
   renameCategory(){
     this.router.navigate(['/rename', this.selected_category.id, NaN, NaN]);
   }
+  back(){
+    this.router.navigate(['/edit']);
+  }
 }

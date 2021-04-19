@@ -1,25 +1,9 @@
-<style>
-    Button{
-        width: 350 ;
-        height: 70;
-        color: black ;
-        background-color: gray;
-        font-size: 28px;
-        font-family: Proxima Nova;
-    }
-    StackLayout{
-        background-color: darkslateblue;
-    }
-    TextField{
-      height: 125px;
-      font-size: 30px;
-      font-family: Proxima Nova;
-      background-color: white;
-    }
-</style>
+<ActionBar title="Edit"></ActionBar>
 <FlexLayout>
     <StackLayout>
         <TextField  class="h2" [(ngModel)] = "SelectedData"></TextField>
         <button class = "h2" text="Edit" (tap) = "edit()"></button>
+        <button class = "h2" text="Cancle" (tap) = "cancle()"></button>
+        
     </StackLayout>
 </FlexLayout>
