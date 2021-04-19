@@ -17,8 +17,8 @@
             </ng-template>
         </ListView>
         <StackLayout>
-            <TextField [(ngModel)] = "answer" ></TextField>
-            <Button text="Change Answer" (tap) = "changeAnswer()" ></Button>
+            <TextField class="QuestionTextField" [(ngModel)] = "answer" ></TextField>
+            <Button class="QuestionButton" text="Change Answer" (tap) = "changeAnswer()" ></Button>
 
             
             <Button text="Delete Question" (tap) = "delQuestion()"></Button>

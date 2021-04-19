@@ -1,9 +1,9 @@
 <ActionBar [title]="title"></ActionBar>
 <FlexLayout >
     <StackLayout>
-        <Label textWrap="true" class = "h1" [text] = "selected_question.question" ></Label>
+        <Label textWrap="true" [text] = "selected_question.question" ></Label>
         <Label text="Choose your answer"></Label>
-        <ListView height="300" [items] = "selected_question.choice">
+        <ListView height="400" [items] = "selected_question.choice">
             <ng-template let-item="item">
                 <StackLayout>
                   <Label [text] = "item.choice" (tap)="collectSelected(item.id)" ></Label>
