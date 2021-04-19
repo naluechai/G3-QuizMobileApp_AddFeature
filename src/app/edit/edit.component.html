@@ -1,14 +1,44 @@
-<ActionBar title="edit menu"></ActionBar>
+<style>
+  Button{
+      width: 350 ;
+      height: 70;
+      color: black ;
+      background-color: gray;
+      font-size: 28px;
+      font-family: Proxima Nova;
+  }
+  Label{
+      text-align: center;
+      color: white;
+      font-size: 30px;
+      font-family: Proxima Nova;
+  }
+  ActionBar{
+      color: floralwhite;
+      font-family: Proxima Nova;
+      background-color: darkslateblue;
+  }
+  ListView{
+      background-color: darkslateblue;
+  }
+  TextField{
+    height: 200px;
+    font-size: 30px;
+    font-family: Proxima Nova;
+  }
+</style>
+<ActionBar title="Edit"></ActionBar>
 <FlexLaypout>
     <StackLayout>
-        <ListView height="450" [items]="category_List">
+        <ListView height="500" [items]="category_List">
             <ng-template let-item="item">
               <StackLayout>
-                <Label class="h2" [text]="item.name" [nsRouterLink]="['/detail', item.id]"></Label>
+                <Label [text]="item.name" [nsRouterLink]="['/detail', item.id]"></Label>
               </StackLayout>
             </ng-template>
           </ListView>
-          <TextField class = "h2" [(ngModel)]="categoryName" hint="New Category Name"></TextField>
+          <TextField [(ngModel)]="categoryName" hint="New Category Name"></TextField>
+          <hr>
           <Button text="Add New Category" (tap) = "addNewCategory()" ></Button>
     </StackLayout>
 </FlexLaypout>
