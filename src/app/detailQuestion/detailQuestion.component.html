@@ -1,10 +1,10 @@
 <style>
     Button{
         width: 350 ;
-        height: 70;
+        height: 60;
         color: black ;
         background-color: gray;
-        font-size: 28px;
+        font-size: 23px;
         font-family: Proxima Nova;
     }
     Label{
@@ -22,15 +22,15 @@
         background-color: darkslateblue;
     }
     TextField{
-      height: 200px;
-      font-size: 30px;
+      height: 150px;
+      font-size: 23px;
       font-family: Proxima Nova;
     }
   </style>
 <ActionBar [title]="title" (tap) = "renameQuestion()"></ActionBar>
 <FlexLayout>
     <StackLayout>
-        <ListView height="400" [items] = selected_question.choice>
+        <ListView height="300" [items] = selected_question.choice>
             <ng-template let-item="item">
                 <StackLayout>
                     <Label  [text] = "'Choice' + item.id + ': ' + item.choice" (tap) = "rename(item.id)" ></Label> 
