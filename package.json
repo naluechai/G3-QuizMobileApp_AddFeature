@@ -39,11 +39,14 @@
     "@angular/platform-browser-dynamic": "~11.2.7",
     "@angular/router": "~11.2.7",
     "@nativescript/angular": "~11.8.0",
-    "@nativescript/core": "~8.0.0",
+    "@nativescript/core": "^8.0.1",
     "@nativescript/theme": "~3.0.1",
     "nativescript-hide-action-bar": "^1.0.1",
     "reflect-metadata": "~0.1.13",
     "rxjs": "^6.6.7",
+    "tns-android": "^6.5.3",
+    "tns-core-modules": "^6.5.27",
+    "tns-core-modules-widgets": "^6.5.10",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
