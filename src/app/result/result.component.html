@@ -1,8 +1,32 @@
+<style>
+    Button{
+        width: 300 ;
+        height: 75;
+        color: black ;
+        background-color: gray;
+        font-size: 30px;
+        font-family: Proxima Nova;
+    }
+    Label{
+        color: white;
+        font-size: 25px;
+        font-family: Proxima Nova;
+    }
+    ActionBar{
+        color: floralwhite;
+        font-family: Proxima Nova;
+        background-color: darkslateblue;
+    }
+    StackLayout{
+        background-color: darkslateblue;
+    }
+</style>
+
 <ActionBar title="Result"></ActionBar>
 <StackLayout>
-    <label class="h1" text="Quiz is Finished"></label>
-    <Label class="h2" [text] = "'You answer '+ result +' question correct'"></Label>
-    <Label class="h2" [text] = "'From '+ maxScore + ' Question'"></Label>
+    <label text="Quiz is Finished"></label>
+    <Label [text] = "'You answer '+ result +' question correct'"></Label>
+    <Label [text] = "'From '+ maxScore + ' Question'"></Label>
     <Button text="Retry" [nsRouterLink] = "['/play/'+id]"></Button>
     <Button text="Menu" [nsRouterLink] = "['/menu']"></Button>
 </StackLayout>

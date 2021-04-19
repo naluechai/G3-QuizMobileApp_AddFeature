@@ -1,12 +1,35 @@
+<style>
+  Button{
+      width: 300 ;
+      height: 75;
+      color: black ;
+      background-color: gray;
+      font-size: 30px;
+      font-family: Proxima Nova;
+  }
+  Label{
+      font-size: 30px;
+      color: white;
+      font-family: Proxima Nova;
+  }
+  ActionBar{
+      color: floralwhite;
+      font-family: Proxima Nova;
+      background-color: darkslateblue;
+  }
+  StackLayout{
+      background-color: darkslateblue;
+  }
+</style>
 <ActionBar [title]="title"></ActionBar>
 <FlexLayout >
     <StackLayout>
         <Label textWrap="true" class = "h1" [text] = "selected_question.question" ></Label>
-        <Label class="h2" text="Choose your answer"></Label>
+        <Label text="Choose your answer"></Label>
         <ListView height="300" [items] = "selected_question.choice">
             <ng-template let-item="item">
                 <StackLayout>
-                  <Label class = "h2" [text] = "item.choice" (tap)="collectSelected(item.id)" ></Label>
+                  <Label [text] = "item.choice" (tap)="collectSelected(item.id)" ></Label>
                 </StackLayout>
               </ng-template>
         </ListView>

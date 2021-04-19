@@ -1,18 +1,47 @@
+<style>
+    Button{
+        width: 350 ;
+        height: 70;
+        color: black ;
+        background-color: gray;
+        font-size: 28px;
+        font-family: Proxima Nova;
+    }
+    Label{
+        text-align: left;
+        color: darkslateblue;
+        font-size: 30px;
+        font-family: Proxima Nova;
+    }
+    ActionBar{
+        color: floralwhite;
+        font-family: Proxima Nova;
+        background-color: darkslateblue;
+    }
+    ListView{
+        background-color: darkslateblue;
+    }
+    TextField{
+      height: 200px;
+      font-size: 30px;
+      font-family: Proxima Nova;
+    }
+  </style>
 <ActionBar [title]="title" (tap) = "renameQuestion()"></ActionBar>
 <FlexLayout>
     <StackLayout>
         <ListView height="400" [items] = selected_question.choice>
             <ng-template let-item="item">
                 <StackLayout>
-                    <Label class = "h2" [text] = "'Choice' + item.id + ': ' + item.choice" (tap) = "rename(item.id)" ></Label> 
+                    <Label  [text] = "'Choice' + item.id + ': ' + item.choice" (tap) = "rename(item.id)" ></Label> 
                   </StackLayout>
             </ng-template>
         </ListView>
         <StackLayout>
-            <TextField class="h2" [(ngModel)] = "answer" ></TextField>
+            <TextField [(ngModel)] = "answer" ></TextField>
             <Button text="Change Answer" (tap) = "changeAnswer()" ></Button>
 
-            <TextField class = "h2" [(ngModel)]="choiceName" hint="New Choice Name"></TextField>
+            <TextField [(ngModel)]="choiceName" hint="New Choice Name"></TextField>
             <Button text="Add Choice" (tap) = "addChoice()"></Button>
             <Button text="Delete Question" (tap) = "delQuestion()"></Button>
         </StackLayout>
