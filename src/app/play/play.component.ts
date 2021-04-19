@@ -7,7 +7,8 @@ import { CategoryForm , QuestionForm} from '../category/category'
 
 @Component({
   selector: 'ns-play',
-  templateUrl: './play.component.html'
+  templateUrl: './play.component.html',
+  styleUrls: ['./play.component.css'],
 })
 
 export class PlayComponent implements OnInit {
