@@ -2,8 +2,16 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Router } from '@angular/router';
 
+import * as camera from "@nativescript/camera"
+import { ImageAsset } from "@nativescript/core";
+import { ImageSource, knownFolders} from '@nativescript/core';
+import { flatMap, map } from 'rxjs/operators';
+import { from } from 'rxjs';
+import * as imagepicker from "@nativescript/imagepicker";
+
 import { CategoryService } from '../category/category.service'
 import { CategoryForm , QuestionForm, ChoiceForm} from '../category/category' 
+
 
 @Component({
   selector: 'ns-rename',
@@ -14,7 +22,11 @@ export class RenameComponent implements OnInit {
   QuestionID:number;
   ChoiceID:number;
   SelectedData :string;
-
+  
+  Image:string;
+  GotImage:boolean ; 
+  imagePath:string ;
+  
   constructor( private categoryService :CategoryService, private route: ActivatedRoute, private router : Router) {}
   ngOnInit(): void {
     this.CategoryID = +this.route.snapshot.params.id
@@ -71,5 +83,101 @@ export class RenameComponent implements OnInit {
         this.router.navigate(['/detail',this.CategoryID, this.QuestionID]);
       }
     }
+  }
+  getRandomString() {
+    // random hash generator for generate file name
+    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = '';
+    for ( var i = 0; i < 16; i++ ) {
+        result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
+    }
+    return result;
+}
+  takePhoto(): void {
+    if (!camera.isAvailable()) {
+        throw new Error('Camera not available');
+    }
+    from(camera.requestPermissions()).pipe(
+        flatMap(() => camera.takePicture()),
+        flatMap((imageAsset: ImageAsset) => ImageSource.fromAsset(imageAsset)),
+        map((imageSource: ImageSource) => {
+            // set photo name and path get jpg 
+            const fileName = this.getRandomString() + ".jpg";
+            const photoFilePath = this.createPhotoPath(fileName);
+
+            // save photo in full quality to file
+            const success: boolean = imageSource.saveToFile(photoFilePath, 'jpg');
+            if (!success) {
+                throw new Error('Error during saving photo image to file ' + photoFilePath);
+            }
+            return photoFilePath;
+        })
+    ).subscribe(photoFilePath => {
+        this.Image = photoFilePath
+        this.GotImage = true; // set image visible
+        console.log('Photofilepath ' + photoFilePath);
+    }, error => {
+        console.log(error);
+    })
+    }
+
+    public pickPhoto() {
+      let that = this;
+      let context = imagepicker.create({
+          mode: "multiple"
+      });
+      
+      context
+          .authorize()
+          .then(function() {
+              return context.present();
+          })
+          .then(function(selection) {
+              selection.forEach(function(selected) {
+                  // process the selected image
+                  let source = ImageSource.fromAsset(selected)
+                  source.then((imageSource: ImageSource) => {
+                      // set photo name and path & save it
+                      let fileName = that.getRandomString() + ".jpg";
+                      const photoFilePath = that.createPhotoPath(fileName);
+                      const success: boolean = imageSource.saveToFile(photoFilePath, 'jpg');
+
+                      if (!success) {
+                          throw new Error('Error during saving photo image to file ' + photoFilePath);
+                      }
+                      else {
+                          // save successfully
+                          that.imagePath = photoFilePath;
+                          this.Image = photoFilePath
+                          this.GotImage = true; // set image visible
+                      }
+                      return photoFilePath;
+                  })
+              })
+          }).catch(function (e) {
+              console.log(e);
+          });
+  }
+
+    private createPhotoPath(fileName: string): string {
+      const documentFolders = knownFolders.documents();
+      if (!documentFolders) {
+          throw new Error('Documents folder is not available');
+      }
+
+      // gets or creates photo folder
+      let photoFolderPath;
+      photoFolderPath = documentFolders.getFolder('images');
+
+      // gets or creates empty file
+      const photoFile = photoFolderPath.getFile(fileName);
+      if (!photoFile) {
+          throw new Error('Cannot create photo file');
+      }
+      return photoFile.path;
+  }
+
+  public photoViewer(src: string){
+      this.router.navigate(['/photo', src ]);
   }
 }

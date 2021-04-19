@@ -1,5 +1,4 @@
 {
-  "name": "@nativescript/template-hello-world-ng",
   "main": "src/main.ts",
   "version": "8.0.2",
   "author": "NativeScript Team <oss@nativescript.org>",
@@ -40,10 +39,10 @@
     "@angular/router": "~11.2.7",
     "@nativescript/angular": "~11.8.0",
     "@nativescript/camera": "^5.0.8",
-    "@nativescript/core": "^8.0.1",
+    "@nativescript/core": "^8.0.0",
     "@nativescript/theme": "~3.0.1",
     "reflect-metadata": "~0.1.13",
-    "rxjs": "^6.6.7",
+    "rxjs": "~6.6.7",
     "tns-android": "^6.5.3",
     "tns-core-modules": "^6.5.27",
     "tns-core-modules-widgets": "^6.5.10",
@@ -52,11 +51,11 @@
   "devDependencies": {
     "@angular/compiler-cli": "~11.2.7",
     "@nativescript/android": "8.0.0",
+    "@nativescript/ios": "8.0.0",
     "@nativescript/types": "~8.0.0",
-    "@nativescript/webpack": "5.0.0-beta.2",
+    "@nativescript/webpack": "beta",
     "@ngtools/webpack": "~11.2.6",
     "typescript": "~4.0.0"
   },
   "private": "true",
   "readme": "NativeScript Application"
-}
