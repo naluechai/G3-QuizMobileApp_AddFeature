@@ -1,44 +1,15 @@
-<style>
-    Button{
-        width: 350 ;
-        height: 70;
-        color: black ;
-        background-color: gray;
-        font-size: 28px;
-        font-family: Proxima Nova;
-    }
-    Label{
-        text-align: center;
-        color: white;
-        font-size: 30px;
-        font-family: Proxima Nova;
-    }
-    ActionBar{
-        color: floralwhite;
-        font-family: Proxima Nova;
-        background-color: darkslateblue;
-    }
-    ListView{
-        background-color: darkslateblue;
-    }
-    TextField{
-      height: 200px;
-      font-size: 30px;
-      font-family: Proxima Nova;
-    }
-  </style>
 <ActionBar [title]="selected_category.name" (tap) = "renameCategory()" ></ActionBar>
 <FlexLayout>
     <StackLayout>
             <ListView height="500" [items] = selected_category.questions>
                 <ng-template let-item="item">
                     <StackLayout>
-                        <Label class = "h2" [text] = "item.id + ': ' + item.question" [nsRouterLink]="['/detail', categoryID, item.id ]" ></Label>
+                        <Label [text] = "item.id + ': ' + item.question" [nsRouterLink]="['/detail', categoryID, item.id ]" ></Label>
                     </StackLayout>
                 </ng-template>
             </ListView>
-            <TextField class = "h2" [(ngModel)]="questionName" hint="New Question Name"></TextField>
-            <Button text="Add Question" (tap) = "addQuestion()"></Button>
-            <Button text="Delete Category" (tap) = "delCategory()"></Button>
+            <TextField [(ngModel)]="questionName" hint="New Question Name"></TextField>
+            <Button class="DetailButton" text="Add Question" (tap) = "addQuestion()"></Button>
+            <Button class="DetailButton" text="Delete Category" (tap) = "delCategory()"></Button>
     </StackLayout>
 </FlexLayout>

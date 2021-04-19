@@ -1,33 +1,7 @@
-<style>
-    Button{
-        width: 300 ;
-        height: 75;
-        color: black ;
-        background-color: gray;
-        font-size: 30px;
-        font-family: Proxima Nova;
-    }
-    Label{
-        text-align: center;
-        color: white;
-        font-size: 60px;
-        font-family: Proxima Nova;
-    }
-    ActionBar{
-        color: floralwhite;
-        font-family: Proxima Nova;
-        background-color: darkslateblue;
-    }
-    FlexboxLayout{
-        align-items: center;
-        justify-content: center;
-        background-color: darkslateblue;
-    }
-</style>
 <ActionBar title="Quiz MobileApp by Group3"></ActionBar>
 <FlexboxLayout>
     <StackLayout>
-        <Label text="Menu" ></Label>
+        <Label class="MenuLabel" text="Menu" ></Label>
         <Button text="Start" [nsRouterLink]="['/category']"></Button>
         <Button text="Edit Quiz" [nsRouterLink]="['/edit']"></Button>
     </StackLayout>
