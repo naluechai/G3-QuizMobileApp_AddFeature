@@ -95,7 +95,7 @@ export class CategoryService {
       { id:3, choice:"รุนแรง" },
       { id:3, choice:"ตอบโต้" },
     ),
-    answer:
+    answer:1
     },
     { id:5, question:"Arraignment", choice: new Array<ChoiceForm>(
       { id:1, choice:"การงาน" },
