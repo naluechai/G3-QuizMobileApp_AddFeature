@@ -11,10 +11,11 @@ import { EditComponent } from './edit/edit.component'
 import { DetailCategoryComponent } from './detailCategory/detailCategory.component'
 import { DetailQuestionComponent } from './detailQuestion/detailQuestion.component'
 import { RenameComponent } from'./rename/rename.component'
+import { HideActionBarModule } from 'nativescript-hide-action-bar';
 
 @NgModule({
   bootstrap: [AppComponent],
-  imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule],
+  imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule, HideActionBarModule],
   declarations: [AppComponent,MenuComponent, CategoryComponent, PlayComponent,
                 ResultComponent, EditComponent, DetailCategoryComponent
               ,DetailQuestionComponent, RenameComponent  ],
