@@ -63,6 +63,50 @@ export class CategoryService {
     answer:2
     },
   )
+  },
+  { id: 3 , name: "Meaning English with Thai", questions: new Array<QuestionForm>(
+    { id:1, question:"Essential", choice: new Array<ChoiceForm>(
+      { id:1, choice:"สำคัญ" },
+      { id:2, choice:"ทั่วไป" },
+      { id:3, choice:"หยิ่งผยอง" },
+      { id:3, choice:"แก่นแท้" },
+    ),
+    answer:1
+    },
+    { id:2, question:"Skepticism", choice: new Array<ChoiceForm>(
+      { id:1, choice:"ประมาท" },
+      { id:2, choice:"ความสงสัย" },
+      { id:3, choice:"อ่อนแอ" },
+      { id:3, choice:"สงวน" },
+    ),
+    answer:2
+    },
+    { id:3, question:"Experimental", choice: new Array<ChoiceForm>(
+      { id:1, choice:"ส่วนขยาย" },
+      { id:2, choice:"ประสบการณ์" },
+      { id:3, choice:"การทดลอง" },
+      { id:3, choice:"สิ่งนอกกาย" },
+    ),
+    answer:3
+    },
+    { id:4, question:"Criticism", choice: new Array<ChoiceForm>(
+      { id:1, choice:"วิจารณ์" },
+      { id:2, choice:"โต้วาที" },
+      { id:3, choice:"รุนแรง" },
+      { id:3, choice:"ตอบโต้" },
+    ),
+    answer:
+    },
+    { id:5, question:"Arraignment", choice: new Array<ChoiceForm>(
+      { id:1, choice:"การงาน" },
+      { id:2, choice:"ความรับผิดชอบ" },
+      { id:3, choice:"การวิพากษ์" },
+      { id:3, choice:"การฟ้องร้อง" },
+    ),
+    answer:4
+    },
+
+  )
   }
     )
 
