@@ -21,11 +21,6 @@ The following CSS rule changes the font size of all Buttons that have the
 "-primary" class modifier.
 */
 Button{
-  width: 300 ;
-  height: 75;
-  color: black ;
-  background-color: gray;
-  font-size: 30px;
   font-family: Proxima Nova;
 }
 
@@ -35,19 +30,11 @@ ActionBar{
   background-color: darkslateblue;
 }
 
-FlexboxLayout{
-  align-items: center;
-  justify-content: center;
-  background-color: darkslateblue;
-}
-
 StackLayout{
   background-color: darkslateblue;
 }
 
 Label{
-  color: white;
-  font-size: 30px;
   font-family: Proxima Nova;
 }
 
@@ -114,3 +101,54 @@ font-family: Proxima Nova;
   font-family: Proxima Nova;
   background-color: white;
 }
+/*menu component */
+.FlexMenu{
+  justify-content: center;
+  background-color: darkslateblue; 
+}
+.StackMenu{
+  background-color: darkslateblue;
+}
+.menu1{
+  color: white;
+  font-size: 50px;
+}
+.menu2{
+  color: white;
+  font-size: 80;
+}
+.menuButton1{
+  width: 300 ;
+  height: 75;
+  color: white ;
+  background-color: grey;
+  font-size: 30px;
+  border-radius: 50px;
+}
+.menuButton2{
+  width: 300 ;
+  height: 75;
+  color: white ;
+  background-color: grey;
+  font-size: 30px;
+  border-radius: 50px;
+}
+/*category component */
+.quizlist{
+  color: white;
+  font-size: 30;
+}
+/*play component */
+.question{
+  color: white;
+  font-size: 45;
+}
+.questionAsk{
+  color: white;
+  font-size: 25;
+}
+.answer{
+  color: white;
+  font-size: 30;
+}
+/*result componen*/

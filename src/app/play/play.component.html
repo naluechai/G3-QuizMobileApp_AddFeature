@@ -1,12 +1,12 @@
 <ActionBar [title]="title"></ActionBar>
 <FlexLayout >
     <StackLayout>
-        <Label textWrap="true" [text] = "selected_question.question" ></Label>
-        <Label text="Choose your answer"></Label>
+        <Label class = "question" textWrap="true" [text] = "selected_question.question" ></Label>
+        <Label class = "questionAsk" text="Choose your answer"></Label>
         <ListView height="400" [items] = "selected_question.choice">
             <ng-template let-item="item">
                 <StackLayout>
-                  <Label [text] = "item.choice" (tap)="collectSelected(item.id)" ></Label>
+                  <Label class="answer" [text] = "item.id + ')   '+ item.choice" (tap)="collectSelected(item.id)" ></Label>
                 </StackLayout>
               </ng-template>
         </ListView>

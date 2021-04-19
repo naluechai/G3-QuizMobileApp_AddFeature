@@ -1,10 +1,10 @@
-<ActionBar title = "Click Quiz to Start"></ActionBar>
+<ActionBar title = "Select Quiz"></ActionBar>
 
 <StackLayout>
     <ListView height="450" [items]="category_List">
         <ng-template let-item="item">
           <StackLayout>
-            <Label [text]="item.name" [nsRouterLink]="['/play', item.id]"  ></Label>
+            <Label class="quizlist" [text]="item.name" [nsRouterLink]="['/play', item.id]"  ></Label>
           </StackLayout>
         </ng-template>
       </ListView>
