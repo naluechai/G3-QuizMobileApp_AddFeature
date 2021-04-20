@@ -4,7 +4,7 @@
 
 <GridLayout rows="auto, *">
     <GridLayout row =0 columns="* , auto" >
-        <TextField [(ngModel)]="choiceName" hint="New Choice Name" col=0></TextField>
+        <TextField class="txt1"[(ngModel)]="choiceName" hint="New Choice Name" col=0></TextField>
         <Image class="add_item" src="~/app/img/add.png" (tap) = "addChoice()" col=1></Image>
     </GridLayout>
 
@@ -12,12 +12,12 @@
         <ListView height="300" [items] = selected_question.choice>
             <ng-template let-item="item">
                 <StackLayout>
-                    <Label  [text] = "'Choice' + item.id + ': ' + item.choice" (tap) = "rename(item.id)" ></Label> 
+                    <Label class="list" [text] = "'Choice' + item.id + ': ' + item.choice" (tap) = "rename(item.id)" ></Label> 
                   </StackLayout>
             </ng-template>
         </ListView>
         <StackLayout>
-            <TextField class="QuestionTextField" [(ngModel)] = "answer" ></TextField>
+            <TextField class="txt2" [(ngModel)] = "answer" ></TextField>
             <Button class="QuestionButton" text="Change Answer" (tap) = "changeAnswer()" ></Button>
 
             

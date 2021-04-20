@@ -4,9 +4,9 @@
         <StackLayout orientation="horizontal" *ngIf="Image">
             <Image  [src]="Image" height="350" width="auto" ></Image>
         </StackLayout>
-        <TextField  class="h2" [(ngModel)] = "SelectedData"></TextField>
-        <button class = "h2" text="Take photo" (tap) = "takePhoto()"></button>
-        <button class = "h2" text="Select Photo" (tap) = "pickPhoto()"></button>
+        <TextField  class="txt" [(ngModel)] = "SelectedData"></TextField>
+        <button class = "h2" text="Take photo" ></button><!--(tap) = "takePhoto()"-->
+        <button class = "h2" text="Select Photo" ></button><!--(tap) = "pickPhoto()"-->
         <button class = "h2" text="Edit" (tap) = "edit()"></button>
         <button class = "h2" text="Cancle" (tap) = "cancle()"></button>
     </StackLayout>

@@ -1,8 +1,10 @@
-<ActionBar title="Result"></ActionBar>
-<StackLayout>
-    <label class="ResultLabel" text="Quiz is Finished"></label>
-    <Label class="ResultLabel" [text] = "'You answer '+ result +' question correct'"></Label>
-    <Label class="ResultLabel" [text] = "'From '+ maxScore + ' Question'"></Label>
-    <Button text="Retry" [nsRouterLink] = "['/play/'+id]"></Button>
-    <Button text="Menu" [nsRouterLink] = "['/menu']"></Button>
-</StackLayout>
+<ActionBar flat="true" title=""></ActionBar>
+<FlexLayout class="flex">
+    <StackLayout >
+        <label textAlignment="center" class="ResultLabel1" text="Quiz Done"></label>
+        <Label textAlignment="center" class="ResultLabel2" [text] = "'score: '+ result"></Label>
+        <Label textAlignment="center" class="ResultLabel3" [text] = "'from: '+ maxScore "></Label>
+        <Button class="btn" text="Retry" [nsRouterLink] = "['/play/'+id]"></Button>
+        <Button class="btn" text="Menu" [nsRouterLink] = "['/menu']"></Button>
+    </StackLayout>
+</FlexLayout>

@@ -1,0 +1,32 @@
+.ResultLabel1{
+    color: white;
+    font-size: 45px;
+    font-family: Proxima Nova;
+    
+  }
+.ResultLabel2{
+    color: white;
+    font-size: 35px;
+    font-family: Proxima Nova;
+  }
+.ResultLabel3{
+    color: white;
+    font-size: 35px;
+    font-family: Proxima Nova;
+  }
+.flex{
+    justify-content: center;
+    vertical-align: middle;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin: auto;
+}
+.btn{
+    width: 200 ;
+    height: 75;
+    color: white ;
+    background-color: grey;
+    font-size: 30px;
+    border-radius: 50px;
+}

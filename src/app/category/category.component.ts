@@ -7,6 +7,7 @@ import { CategoryForm } from './category'
 @Component({
   selector: 'ns-category',
   templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
   category_List : Array<CategoryForm>;

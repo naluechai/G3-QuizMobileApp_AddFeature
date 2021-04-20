@@ -1,0 +1,32 @@
+/*menu component */
+.FlexMenu{
+    justify-content: center;
+    background-color: darkslateblue; 
+  }
+  .StackMenu{
+    background-color: darkslateblue;
+  }
+  .menu1{
+    color: white;
+    font-size: 50px;
+  }
+  .menu2{
+    color: white;
+    font-size: 80;
+  }
+  .menuButton1{
+    width: 300 ;
+    height: 75;
+    color: white ;
+    background-color: grey;
+    font-size: 30px;
+    border-radius: 50px;
+  }
+  .menuButton2{
+    width: 300 ;
+    height: 75;
+    color: white ;
+    background-color: grey;
+    font-size: 30px;
+    border-radius: 50px;
+  }

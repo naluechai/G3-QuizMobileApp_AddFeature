@@ -8,6 +8,7 @@ import { CategoryForm , QuestionForm} from '../category/category'
 @Component({
   selector: 'ns-detailCategory',
   templateUrl: './detailCategory.component.html',
+  styleUrls: ["./detailCategory.component.css"]
 })
 export class DetailCategoryComponent implements OnInit {
   selected_category : CategoryForm;

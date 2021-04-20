@@ -2,7 +2,7 @@
 <GridLayout rows="auto, * , *">
 
   <GridLayout row =0 columns="* , auto" class= "add-bar">
-    <TextField [(ngModel)]="categoryName" hint="New Quiz Name" col="0"></TextField>
+    <TextField class="txt" [(ngModel)]="categoryName" hint="New Quiz Name" col="0"></TextField>
     <Image class="add_item" src="~/app/img/add.png" (tap) = "addNewCategory()" col=1></Image>
   </GridLayout>
   
@@ -10,7 +10,7 @@
         <ListView height="500" [items]="category_List">
             <ng-template let-item="item">
               <StackLayout>
-                <Label [text]="item.name" [nsRouterLink]="['/detail', item.id]"></Label>
+                <Label class= "list" [text]="item.name" [nsRouterLink]="['/detail', item.id]"></Label>
               </StackLayout>
             </ng-template>
           </ListView>

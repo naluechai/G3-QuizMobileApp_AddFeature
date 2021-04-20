@@ -4,7 +4,7 @@
 
 <GridLayout rows="auto, *">
     <GridLayout row =0 columns="* , auto" >
-        <TextField class = "h2" [(ngModel)]="questionName" hint="New Question Name" col=0></TextField>
+        <TextField class = "txt" [(ngModel)]="questionName" hint="New Question Name" col=0></TextField>
         <Image class="add_item" src="~/app/img/add.png" (tap) = "addQuestion()" col=1></Image>
     </GridLayout>
     
@@ -12,7 +12,7 @@
             <ListView height="500" [items] = selected_category.questions>
                 <ng-template let-item="item">
                     <StackLayout>
-                        <Label [text] = "item.id + ': ' + item.question" [nsRouterLink]="['/detail', categoryID, item.id ]" ></Label>
+                        <Label class="list" [text] = "item.id + ': ' + item.question" [nsRouterLink]="['/detail', categoryID, item.id ]" ></Label>
                     </StackLayout>
                 </ng-template>
             </ListView>

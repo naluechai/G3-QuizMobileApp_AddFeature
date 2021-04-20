@@ -1,6 +1,11 @@
-.txt{
+.txt1{
     height: 200px;
     font-size: 30px;
+    background-color: white;
+}
+.txt2{
+    height: 150px;
+    font-size: 20px;
     background-color: white;
 }
 .add_item{

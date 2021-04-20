@@ -8,7 +8,7 @@ import { CategoryForm , QuestionForm} from '../category/category'
 @Component({
   selector: 'ns-edit',
   templateUrl: './edit.component.html',
-  //styleUrls: ["./edit.component.css"]
+  styleUrls: ["./edit.component.css"]
 })
 export class EditComponent implements OnInit {
   category_List : Array<CategoryForm>;

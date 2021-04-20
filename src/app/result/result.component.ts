@@ -8,6 +8,8 @@ import { CategoryForm , QuestionForm} from '../category/category'
 @Component({
   selector: 'ns-result',
   templateUrl: './result.component.html',
+  styleUrls: ["./result.component.css"]
+  
 })
 export class ResultComponent implements OnInit {
   selected_category : CategoryForm;

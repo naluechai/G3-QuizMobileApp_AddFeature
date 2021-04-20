@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Router } from '@angular/router';
 
-import * as camera from "@nativescript/camera"
+/*import * as camera from "@nativescript/camera"
 import { ImageAsset } from "@nativescript/core";
 import { ImageSource, knownFolders} from '@nativescript/core';
 import { flatMap, map } from 'rxjs/operators';
 import { from } from 'rxjs';
 import * as imagepicker from "@nativescript/imagepicker";
-
+*/
 import { CategoryService } from '../category/category.service'
 import { CategoryForm , QuestionForm, ChoiceForm} from '../category/category' 
 
@@ -16,6 +16,7 @@ import { CategoryForm , QuestionForm, ChoiceForm} from '../category/category'
 @Component({
   selector: 'ns-rename',
   templateUrl: './rename.component.html',
+  styleUrls: ["./rename.component.css"]
 })
 export class RenameComponent implements OnInit {
   CategoryID:number;
@@ -93,7 +94,7 @@ export class RenameComponent implements OnInit {
     }
     return result;
 }
-  takePhoto(): void {
+ /* takePhoto(): void {
     if (!camera.isAvailable()) {
         throw new Error('Camera not available');
     }
@@ -179,5 +180,5 @@ export class RenameComponent implements OnInit {
 
   public photoViewer(src: string){
       this.router.navigate(['/photo', src ]);
-  }
+  }*/
 }
