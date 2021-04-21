@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Router } from '@angular/router';
 
-/*import * as camera from "@nativescript/camera"
+import * as camera from "@nativescript/camera"
 import { ImageAsset } from "@nativescript/core";
 import { ImageSource, knownFolders} from '@nativescript/core';
 import { flatMap, map } from 'rxjs/operators';
 import { from } from 'rxjs';
 import * as imagepicker from "@nativescript/imagepicker";
-*/
 import { CategoryService } from '../category/category.service'
 import { CategoryForm , QuestionForm, ChoiceForm} from '../category/category' 
 
@@ -23,7 +22,8 @@ export class RenameComponent implements OnInit {
   QuestionID:number;
   ChoiceID:number;
   SelectedData :string;
-  
+  NotQuestion:boolean;
+
   Image:string;
   GotImage:boolean ; 
   imagePath:string ;
@@ -41,18 +41,24 @@ export class RenameComponent implements OnInit {
     if ( Boolean(this.QuestionID) == false && Boolean(this.ChoiceID) == false ){  
       var CategoryData = this.categoryService.getSelectedCategoryData(this.CategoryID)   
       this.SelectedData = CategoryData.name
+      this.NotQuestion = true;
     }
     else if ( Boolean(this.QuestionID) === true && Boolean(this.ChoiceID) == false ) {
       var QuestionData = this.categoryService.getSelectedQuestionData(this.CategoryID, this.QuestionID)   
       this.SelectedData = QuestionData.question
+      this.NotQuestion = false;
+      console.log(QuestionData.imgPath)
+      this.Image = QuestionData.imgPath
+
     }
     else { 
       var ChoiceData = this.categoryService.getSelectedChoiceData(this.CategoryID, this.QuestionID, this.ChoiceID)
       this.SelectedData = ChoiceData.choice 
+      this.NotQuestion = true;
     }
     return this.SelectedData
   }
-
+  
   edit(){
     if(this.SelectedData !="" && this.SelectedData != undefined){
       if( Boolean(this.QuestionID) == false && Boolean(this.ChoiceID) == false  ){
@@ -61,6 +67,7 @@ export class RenameComponent implements OnInit {
       }
       else if ( Boolean(this.QuestionID) === true && Boolean(this.ChoiceID) == false  ){
         this.categoryService.editQuestionName(this.CategoryID, this.QuestionID, this.SelectedData)
+        this.categoryService.addNewImg(this.CategoryID, this.QuestionID, this.Image)
         this.router.navigate(['/detail',this.CategoryID, this.QuestionID]);
       }
       else {
@@ -94,7 +101,7 @@ export class RenameComponent implements OnInit {
     }
     return result;
 }
- /* takePhoto(): void {
+  takePhoto(): void {
     if (!camera.isAvailable()) {
         throw new Error('Camera not available');
     }
@@ -180,5 +187,5 @@ export class RenameComponent implements OnInit {
 
   public photoViewer(src: string){
       this.router.navigate(['/photo', src ]);
-  }*/
+  }
 }

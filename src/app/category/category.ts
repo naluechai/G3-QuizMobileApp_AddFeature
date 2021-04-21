@@ -9,6 +9,7 @@ export interface CategoryForm {
 export interface QuestionForm {
     id: number
     question: string
+    imgPath: string
     choice: Array<ChoiceForm>
     answer : number
   }

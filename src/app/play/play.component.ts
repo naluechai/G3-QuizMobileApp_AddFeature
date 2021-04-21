@@ -20,6 +20,8 @@ export class PlayComponent implements OnInit {
   number:number = 0;
   score:number = 0;
   tempSelectedAnswer = 0; 
+  Image:string="";
+  GotImage:boolean;
 
   constructor( private categoryService : CategoryService, private route: ActivatedRoute, private router : Router ) {}
 
@@ -30,10 +32,8 @@ export class PlayComponent implements OnInit {
     this.selectedQuestion();
     this.title = this.selected_category.name;
   }
-  getConsoleLog(){
-    console.log(this.answerList);
-  }
   selectedQuestion(){
+      this.checkImage();
       //console.log(this.selected_category.questions[this.number]);//undefined if last question
       if (this.number == this.lengthQuestion){//last question
         this.checkAnswer();
@@ -51,6 +51,16 @@ export class PlayComponent implements OnInit {
         this.number+=1;
       }
       console.log("Score",this.score)
+    }
+    checkImage(){
+      console.log(this.selected_category.questions[this.number])
+      this.Image = this.selected_category.questions[this.number].imgPath;
+      if(this.Image !=""){
+        this.GotImage = true;
+      }
+      else{
+        this.GotImage = false
+      }
     }
   collectSelected( id:number ){//select answer
     this.tempSelectedAnswer = id;

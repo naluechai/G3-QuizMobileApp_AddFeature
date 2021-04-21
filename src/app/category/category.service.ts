@@ -8,7 +8,7 @@ import * as AppSettings from '@nativescript/core/application-settings'
 export class CategoryService {
     private temp_Category = new Array<CategoryForm> (
       { id:0 , name: "Test QuickMath", questions: new Array<QuestionForm>(
-        { id:1, question:"1+1=?", choice: new Array<ChoiceForm>(
+        { id:1, question:"1+1=?", imgPath:"" ,choice: new Array<ChoiceForm>(
           { id:1, choice:"2"},
           { id:2, choice:"5"},
           { id:3, choice:"8"},
@@ -16,7 +16,7 @@ export class CategoryService {
         ),
       answer:1
       },
-        { id:2, question:"1*8=?", choice: new Array<ChoiceForm>(
+        { id:2, question:"1*8=?", imgPath:"" ,choice: new Array<ChoiceForm>(
           { id:1, choice:"21"},
           { id:2, choice:"5"},
           { id:3, choice:"8"},
@@ -24,7 +24,7 @@ export class CategoryService {
         ),
       answer:3
     },
-        { id:3, question:"32/8*2", choice: new Array<ChoiceForm>(
+        { id:3, question:"32/8*2", imgPath:"" ,choice: new Array<ChoiceForm>(
           { id:1, choice:"2"},
           { id:2, choice:"7"},
           { id:3, choice:"10"},
@@ -35,7 +35,7 @@ export class CategoryService {
       ),
       },
     { id: 1 , name: "Test 1 Question", questions: new Array<QuestionForm>(
-        { id:1, question:"2 is True", choice: new Array<ChoiceForm>(
+        { id:1, question:"2 is True", imgPath:"" ,choice: new Array<ChoiceForm>(
           { id:1, choice:"1"},
           { id:2, choice:"2"},
           { id:3, choice:"3"},
@@ -46,7 +46,7 @@ export class CategoryService {
     )
     },
     { id: 2 , name: "ExampleQuestion", questions: new Array<QuestionForm>(
-      { id:1, question:"บางเดือนมี 30 วัน บางเดือนมี 31 วัน มีกี่เดือนที่มี 28 วัน ", choice: new Array<ChoiceForm>(
+      { id:1, question:"บางเดือนมี 30 วัน บางเดือนมี 31 วัน มีกี่เดือนที่มี 28 วัน ", imgPath:"" ,choice: new Array<ChoiceForm>(
         { id:1, choice:"2เดือน"},
         { id:2, choice:"1เดือน"},
         { id:3, choice:"4เดือน"},
@@ -54,7 +54,7 @@ export class CategoryService {
       ),
       answer:2
     },
-    { id:2, question:"ถ้าคุณหมอให้ยามา 3 เม็ด แล้วบอกให้คุณกินยาทุกๆ ครึ่งชั่วโมงคุณต้องใช้เวลานานเท่าไหร่ถึงจะกินยาหมด", choice: new Array<ChoiceForm>(
+    { id:2, question:"ถ้าคุณหมอให้ยามา 3 เม็ด แล้วบอกให้คุณกินยาทุกๆ ครึ่งชั่วโมงคุณต้องใช้เวลานานเท่าไหร่ถึงจะกินยาหมด", imgPath:"" ,choice: new Array<ChoiceForm>(
       { id:1, choice:"1 ชั่วโมง"},
       { id:2, choice:"1 ชั่วโมง 30 นาที"},
       { id:3, choice:"2 ชั่วโมง"},
@@ -65,7 +65,7 @@ export class CategoryService {
   )
   },
   { id: 3 , name: "Meaning English with Thai", questions: new Array<QuestionForm>(
-    { id:1, question:"Essential", choice: new Array<ChoiceForm>(
+    { id:1, question:"Essential", imgPath:"" ,choice: new Array<ChoiceForm>(
       { id:1, choice:"สำคัญ" },
       { id:2, choice:"ทั่วไป" },
       { id:3, choice:"หยิ่งผยอง" },
@@ -73,7 +73,7 @@ export class CategoryService {
     ),
     answer:1
     },
-    { id:2, question:"Skepticism", choice: new Array<ChoiceForm>(
+    { id:2, question:"Skepticism", imgPath:"" ,choice: new Array<ChoiceForm>(
       { id:1, choice:"ประมาท" },
       { id:2, choice:"ความสงสัย" },
       { id:3, choice:"อ่อนแอ" },
@@ -81,7 +81,7 @@ export class CategoryService {
     ),
     answer:2
     },
-    { id:3, question:"Experimental", choice: new Array<ChoiceForm>(
+    { id:3, question:"Experimental", imgPath:"" ,choice: new Array<ChoiceForm>(
       { id:1, choice:"ส่วนขยาย" },
       { id:2, choice:"ประสบการณ์" },
       { id:3, choice:"การทดลอง" },
@@ -89,7 +89,7 @@ export class CategoryService {
     ),
     answer:3
     },
-    { id:4, question:"Criticism", choice: new Array<ChoiceForm>(
+    { id:4, question:"Criticism", imgPath:"" ,choice: new Array<ChoiceForm>(
       { id:1, choice:"วิจารณ์" },
       { id:2, choice:"โต้วาที" },
       { id:3, choice:"รุนแรง" },
@@ -97,7 +97,7 @@ export class CategoryService {
     ),
     answer:1
     },
-    { id:5, question:"Arraignment", choice: new Array<ChoiceForm>(
+    { id:5, question:"Arraignment", imgPath:"" ,choice: new Array<ChoiceForm>(
       { id:1, choice:"การงาน" },
       { id:2, choice:"ความรับผิดชอบ" },
       { id:3, choice:"การวิพากษ์" },
@@ -247,7 +247,7 @@ export class CategoryService {
     var lastID = this.getLastCategoryID()+1
     this.saveCategory.push(
       { id:lastID , name:inputName, questions: new Array<QuestionForm>(
-      { id:1, question:undefined, choice: new Array<ChoiceForm>(
+      { id:1, question:undefined, imgPath:"" ,choice: new Array<ChoiceForm>(
         { id:1, choice:undefined},
         { id:2, choice:undefined},
         { id:3, choice:undefined},
@@ -269,7 +269,7 @@ export class CategoryService {
     var selectCategory = this.getSelectedCategoryData(CategoryID)
     var lastID = this.getLastQuestionID(CategoryID)+1
     selectCategory.questions.push({
-       id: lastID, question: name, choice: new Array<ChoiceForm>(
+       id: lastID, question: name, imgPath:"" ,choice: new Array<ChoiceForm>(
           { id:1, choice:undefined},
           { id:2, choice:undefined},
           { id:3, choice:undefined},
@@ -300,5 +300,16 @@ export class CategoryService {
     }
     this.saveData()
   }
-  
+  addNewImg( CategoryID:number , QuestionID:number, NewImgpath:string){
+    var tempCategory = this.getSelectedCategoryData(CategoryID)
+    for(let i = 0; i < tempCategory.questions.length; i++) {
+      if(tempCategory.questions[i].id == QuestionID) {
+        if(NewImgpath != undefined){
+          console.log("add Image :", NewImgpath)
+          tempCategory.questions[i].imgPath = NewImgpath
+        }
+      }
+    }
+    this.saveData()
+  }
 }

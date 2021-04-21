@@ -5,8 +5,8 @@
             <Image  [src]="Image" height="350" width="auto" ></Image>
         </StackLayout>
         <TextField  class="txt" [(ngModel)] = "SelectedData"></TextField>
-        <button class = "h2" text="Take photo" ></button><!--(tap) = "takePhoto()"-->
-        <button class = "h2" text="Select Photo" ></button><!--(tap) = "pickPhoto()"-->
+        <button *ngIf = "!NotQuestion" class = "h2" text="Take photo" (tap) = "takePhoto()" ></button><!---->
+        <button *ngIf = "!NotQuestion" class = "h2" text="Select Photo" (tap) = "pickPhoto()" ></button><!---->
         <button class = "h2" text="Edit" (tap) = "edit()"></button>
         <button class = "h2" text="Cancle" (tap) = "cancle()"></button>
     </StackLayout>

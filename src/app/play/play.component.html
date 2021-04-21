@@ -1,6 +1,7 @@
 <ActionBar [title]="title"></ActionBar>
 <FlexLayout >
     <StackLayout>
+        <Image *ngIf="GotImage" [src]="Image" height="200" width="auto" ></Image>
         <Label class = "question" textWrap="true" [text] = "selected_question.question" ></Label>
         <Label class = "questionAsk" text="Choose your answer"></Label>
         <ListView height="400" [items] = "selected_question.choice">
