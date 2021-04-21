@@ -21,6 +21,7 @@ export class RenameComponent implements OnInit {
   CategoryID:number;
   QuestionID:number;
   ChoiceID:number;
+  BackupData:string;
   SelectedData :string;
   NotQuestion:boolean;
 
@@ -56,6 +57,7 @@ export class RenameComponent implements OnInit {
       this.SelectedData = ChoiceData.choice 
       this.NotQuestion = true;
     }
+    this.BackupData = this.SelectedData
     return this.SelectedData
   }
   
@@ -78,15 +80,15 @@ export class RenameComponent implements OnInit {
   }
   cancle(){
       if( Boolean(this.QuestionID) == false && Boolean(this.ChoiceID) == false  ){
-        this.categoryService.editCategoryName(this.CategoryID, this.SelectedData)
+        this.categoryService.editCategoryName(this.CategoryID, this.BackupData)
         this.router.navigate(['/detail',this.CategoryID]);
       }
       else if ( Boolean(this.QuestionID) === true && Boolean(this.ChoiceID) == false  ){
-        this.categoryService.editQuestionName(this.CategoryID, this.QuestionID, this.SelectedData)
+        this.categoryService.editQuestionName(this.CategoryID, this.QuestionID, this.BackupData)
         this.router.navigate(['/detail',this.CategoryID, this.QuestionID]);
       }
       else {
-        this.categoryService.editChoiceName(this.CategoryID, this.QuestionID, this.ChoiceID , this.SelectedData)
+        this.categoryService.editChoiceName(this.CategoryID, this.QuestionID, this.ChoiceID , this.BackupData)
         this.router.navigate(['/detail',this.CategoryID, this.QuestionID]);
     }
   }
