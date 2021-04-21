@@ -53,13 +53,17 @@ export class PlayComponent implements OnInit {
       console.log("Score",this.score)
     }
     checkImage(){
-      console.log(this.selected_category.questions[this.number])
-      this.Image = this.selected_category.questions[this.number].imgPath;
-      if(this.Image !=""){
-        this.GotImage = true;
+      if(this.number != this.lengthQuestion){
+        this.Image = this.selected_category.questions[this.number].imgPath;
+        if(this.Image !=""){
+          this.GotImage = true;
+        }
+        else{
+          this.GotImage = false
+        }
       }
       else{
-        this.GotImage = false
+        
       }
     }
   collectSelected( id:number ){//select answer

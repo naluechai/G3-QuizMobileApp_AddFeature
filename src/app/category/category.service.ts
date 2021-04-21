@@ -171,7 +171,7 @@ export class CategoryService {
       { id:3, choice:"Vietnam"},
       { id:4, choice:"Samoa"}
     ),
-    answer:2
+    answer:3
     },
     { id:9, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/9.jpg" ,choice: new Array<ChoiceForm>(
       { id:1, choice:"South Korea"},
