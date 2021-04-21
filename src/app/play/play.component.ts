@@ -37,7 +37,6 @@ export class PlayComponent implements OnInit {
       //console.log(this.selected_category.questions[this.number]);//undefined if last question
       if (this.number == this.lengthQuestion){//last question
         this.checkAnswer();
-        //this.selectedAnswer.push(this.tempSelectedAnswer);
         this.router.navigate(['/result',this.selected_category.id,this.score]);
         }
       else if (this.tempSelectedAnswer == 0 ){//start first question
@@ -46,7 +45,6 @@ export class PlayComponent implements OnInit {
       }
       else {//next question 
         this.checkAnswer();
-        //this.selectedAnswer.push(this.tempSelectedAnswer);
         this.selected_question = this.selected_category.questions[this.number];
         this.number+=1;
       }
