@@ -27,9 +27,10 @@ export class DetailQuestionComponent implements OnInit {
     this.selected_question = this.categoryService.getSelectedQuestionData( this.CategoryID, this.QuestionID)
     this.answer = this.selected_question.answer
   }
-  delQuestion(){
-    this.categoryService.deleteQuestion(this.CategoryID ,this.QuestionID)
-    this.router.navigate(['/detail',this.CategoryID]);
+  delChoice( ChoiceID:number){
+    console.log(ChoiceID)
+    this.categoryService.deleteChoice(this.CategoryID, this.QuestionID, ChoiceID)
+    this.selected_question = this.categoryService.getSelectedQuestionData( this.CategoryID, this.QuestionID)
   }
   addChoice(){
     if (this.choiceName !=""){

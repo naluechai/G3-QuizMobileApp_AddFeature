@@ -7,14 +7,17 @@
   </GridLayout>
   
     <StackLayout row =1 >
-        <ListView height="500" [items]="category_List">
+        <ListView  height="500" [items]="category_List">
             <ng-template let-item="item">
               <StackLayout>
-                <Label class= "list" [text]="item.name" [nsRouterLink]="['/detail', item.id]"></Label>
+                <GridLayout columns="*,auto">
+                  <Label class= "list" [text]="item.name" [nsRouterLink]="['/detail', item.id]" col="0"></Label>
+                  <Label class="del-btn"text="Delete" col="1" (tap) = "delCategory(item.id)"></Label>
+                </GridLayout>
               </StackLayout>
             </ng-template>
           </ListView>
     </StackLayout>
-  <button class = "h2" text="back" (tap) = "back()" row = 2></button> 
+    <button class = "h2" text="back" (tap) = "back()" row = 2></button> 
 </GridLayout>
 

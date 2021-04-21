@@ -31,4 +31,8 @@ export class EditComponent implements OnInit {
   back(){
     this.router.navigate(['/menu']);
   }
+  delCategory( inputID:number ) {
+    this.categoryService.deleteCategory(inputID)
+    this.getCategoryData();
+  }
 }

@@ -12,16 +12,17 @@
         <ListView height="300" [items] = selected_question.choice>
             <ng-template let-item="item">
                 <StackLayout>
-                    <Label class="list" [text] = "'Choice' + item.id + ': ' + item.choice" (tap) = "rename(item.id)" ></Label> 
-                  </StackLayout>
+                    <GridLayout columns="*,auto">
+                        <Label class="list" [text] = "'Choice' + item.id + ': ' + item.choice" (tap) = "rename(item.id)" col="0"></Label> 
+                        <Label class="del-btn" text="Delete" (tap)="delChoice(item.id)" col="1" ></Label>
+                    </GridLayout>
+                </StackLayout>
             </ng-template>
         </ListView>
         <StackLayout>
             <TextField class="txt2" [(ngModel)] = "answer" ></TextField>
             <Button class="QuestionButton" text="Change Answer" (tap) = "changeAnswer()" ></Button>
 
-            
-            <Button text="Delete Question" (tap) = "delQuestion()"></Button>
             <button class = "h2" text="back" (tap) = "back()"></button>
         </StackLayout>
     </StackLayout>

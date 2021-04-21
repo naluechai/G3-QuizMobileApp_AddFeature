@@ -20,9 +20,9 @@ export class DetailCategoryComponent implements OnInit {
     this.categoryID = +this.route.snapshot.params.id
     this.selected_category = this.categoryService.getSelectedCategoryData(this.categoryID);
   }
-  delCategory(){
-    this.categoryService.deleteCategory(this.categoryID)
-    this.router.navigate(['/edit']);
+  delQuestion( QuizID:number , QuestionID:number){
+    this.categoryService.deleteQuestion(QuizID, QuestionID)
+    this.router.navigate(['/detail',QuizID]);
   }
   addQuestion(){
     if (this.questionName !=""){

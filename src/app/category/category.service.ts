@@ -69,7 +69,7 @@ export class CategoryService {
       { id:1, choice:"สำคัญ" },
       { id:2, choice:"ทั่วไป" },
       { id:3, choice:"หยิ่งผยอง" },
-      { id:3, choice:"แก่นแท้" },
+      { id:4, choice:"แก่นแท้" },
     ),
     answer:1
     },
@@ -77,7 +77,7 @@ export class CategoryService {
       { id:1, choice:"ประมาท" },
       { id:2, choice:"ความสงสัย" },
       { id:3, choice:"อ่อนแอ" },
-      { id:3, choice:"สงวน" },
+      { id:4, choice:"สงวน" },
     ),
     answer:2
     },
@@ -85,7 +85,7 @@ export class CategoryService {
       { id:1, choice:"ส่วนขยาย" },
       { id:2, choice:"ประสบการณ์" },
       { id:3, choice:"การทดลอง" },
-      { id:3, choice:"สิ่งนอกกาย" },
+      { id:4, choice:"สิ่งนอกกาย" },
     ),
     answer:3
     },
@@ -93,7 +93,7 @@ export class CategoryService {
       { id:1, choice:"วิจารณ์" },
       { id:2, choice:"โต้วาที" },
       { id:3, choice:"รุนแรง" },
-      { id:3, choice:"ตอบโต้" },
+      { id:4, choice:"ตอบโต้" },
     ),
     answer:1
     },
@@ -101,7 +101,7 @@ export class CategoryService {
       { id:1, choice:"การงาน" },
       { id:2, choice:"ความรับผิดชอบ" },
       { id:3, choice:"การวิพากษ์" },
-      { id:3, choice:"การฟ้องร้อง" },
+      { id:4, choice:"การฟ้องร้อง" },
     ),
     answer:4
     },
@@ -271,7 +271,7 @@ export class CategoryService {
       if(tempCategory.questions[i].id == QuestionID) {
           for (let j = 0 ; i < tempCategory.questions[i].choice.length ; j++){
             if(tempCategory.questions[i].choice[j].id == ChoiceID){
-              tempCategory.questions[i].choice.splice(i, 1);
+              tempCategory.questions[i].choice.splice(j, 1);
               break;
             }
         }

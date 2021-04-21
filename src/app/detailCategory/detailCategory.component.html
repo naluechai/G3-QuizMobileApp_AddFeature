@@ -12,12 +12,13 @@
             <ListView height="500" [items] = selected_category.questions>
                 <ng-template let-item="item">
                     <StackLayout>
-                        <Label class="list" [text] = "item.id + ': ' + item.question" [nsRouterLink]="['/detail', categoryID, item.id ]" ></Label>
+                        <GridLayout columns="*,auto">
+                            <Label col = "0" textWrap="true" class="list" [text] = "item.id + ': ' + item.question" [nsRouterLink]="['/detail', categoryID, item.id ]" ></Label>
+                            <Label class="del-btn" text="Delete" col="1" (tap) = "delQuestion(selected_category.id, item.id)"></Label>
+                        </GridLayout>    
                     </StackLayout>
                 </ng-template>
             </ListView>
-            
-            <Button text="Delete Quiz" (tap) = "delCategory()"></Button>
             <button class = "h2" text="back" (tap) = "back()"></button>
     </StackLayout>
 </GridLayout>
