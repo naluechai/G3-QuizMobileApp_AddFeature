@@ -107,6 +107,89 @@ export class CategoryService {
     },
 
   )
+  },
+  { id: 4 , name: "National Flag", questions: new Array<QuestionForm>(
+    { id:1, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/1.png" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"Sweden"},
+      { id:2, choice:"Ireland"},
+      { id:3, choice:"British"},
+      { id:4, choice:"Norway"}
+    ),
+    answer:3
+    },
+    { id:2, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/2.jpg" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"Vietnam"},
+      { id:2, choice:"China"},
+      { id:3, choice:"North Korea"},
+      { id:4, choice:"South Korea"}
+    ),
+    answer:2
+    },
+    { id:3, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/3.png" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"USA"},
+      { id:2, choice:"Maxico"},
+      { id:3, choice:"Spain"},
+      { id:4, choice:"Thailand"}
+    ),
+    answer:1
+    },
+    { id:4, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/4.jpg" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"Indonesia"},
+      { id:2, choice:"Austria"},
+      { id:3, choice:"Afghanistan"},
+      { id:4, choice:"Norway"}
+    ),
+    answer:1
+    },
+    { id:5, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/5.jpg" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"Germany"},
+      { id:2, choice:"Cuba"},
+      { id:3, choice:"Fiji"},
+      { id:4, choice:"Austria"}
+    ),
+    answer:4
+    },
+    { id:6, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/6.jpg" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"Iraq"},
+      { id:2, choice:"India"},
+      { id:3, choice:"Italy"},
+      { id:4, choice:"Austria"}
+    ),
+    answer:2
+    },
+    { id:7, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/7.png" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"Iraq"},
+      { id:2, choice:"Jordan"},
+      { id:3, choice:"Kazakhstan"},
+      { id:4, choice:"Mozambique"}
+    ),
+    answer:2
+    },
+    { id:8, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/8.jpg" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"North Korea	"},
+      { id:2, choice:"China"},
+      { id:3, choice:"Vietnam"},
+      { id:4, choice:"Samoa"}
+    ),
+    answer:2
+    },
+    { id:9, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/9.jpg" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"South Korea"},
+      { id:2, choice:"Japan"},
+      { id:3, choice:"Spain"},
+      { id:4, choice:"North Korea"}
+    ),
+    answer:2
+    },
+    { id:10, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/10.jpg" ,choice: new Array<ChoiceForm>(
+      { id:1, choice:"Singapore"},
+      { id:2, choice:"Uganda"},
+      { id:3, choice:"Spain"},
+      { id:4, choice:"Thailand"}
+    ),
+    answer:2
+    },
+  )
   }
     )
   saveCategory : Array<CategoryForm>  
