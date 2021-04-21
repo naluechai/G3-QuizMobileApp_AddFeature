@@ -13,7 +13,11 @@
 }
 .menu2{
   color: white;
-  font-size: 80;
+  font-size: 80px;
+}
+.menu3{
+  color: white;
+  font-size: 60px;
 }
 .menuButton1{
   width: 300 ;
