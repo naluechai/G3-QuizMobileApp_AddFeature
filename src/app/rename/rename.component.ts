@@ -78,7 +78,7 @@ export class RenameComponent implements OnInit {
       }
     }
   }
-  cancle(){
+  cancel(){
       if( Boolean(this.QuestionID) == false && Boolean(this.ChoiceID) == false  ){
         this.categoryService.editCategoryName(this.CategoryID, this.BackupData)
         this.router.navigate(['/detail',this.CategoryID]);
