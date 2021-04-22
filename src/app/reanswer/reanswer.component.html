@@ -1,0 +1,5 @@
+<StackLayout>
+    <ListPicker class="picker" [items]="choice_list" [selectedIndex]="Answer-1" 
+    (selectedIndexChange)="onSelectedIndexChanged($event)"></ListPicker>
+    <Button text="Cancel" (tap)= "cancel()"></Button>
+</StackLayout>

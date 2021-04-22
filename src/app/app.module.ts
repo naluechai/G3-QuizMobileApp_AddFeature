@@ -11,13 +11,13 @@ import { EditComponent } from './edit/edit.component'
 import { DetailCategoryComponent } from './detailCategory/detailCategory.component'
 import { DetailQuestionComponent } from './detailQuestion/detailQuestion.component'
 import { RenameComponent } from'./rename/rename.component'
-
+import { ReAnswerComponent} from './reanswer/reanswer.component'
 @NgModule({
   bootstrap: [AppComponent],
   imports: [NativeScriptModule, AppRoutingModule, NativeScriptFormsModule,],
   declarations: [AppComponent,MenuComponent, CategoryComponent, PlayComponent,
                 ResultComponent, EditComponent, DetailCategoryComponent
-              ,DetailQuestionComponent, RenameComponent  ],
+              ,DetailQuestionComponent, RenameComponent, ReAnswerComponent  ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
 })

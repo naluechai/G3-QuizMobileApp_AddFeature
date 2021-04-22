@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Dialogs } from "@nativescript/core";
 
 import { CategoryService } from '../category/category.service'
-import { CategoryForm , QuestionForm} from '../category/category' 
+import { CategoryForm , QuestionForm, ChoiceForm} from '../category/category' 
 
 @Component({
   selector: 'ns-detailQuestion',
@@ -51,10 +51,7 @@ export class DetailQuestionComponent implements OnInit {
     }
   }
   changeAnswer(){
-    if (this.answer != null){
-      this.categoryService.editAnswer(this.CategoryID, this.QuestionID, this.answer)
-      this.router.navigate(['/detail',this.CategoryID]);
-    }
+    this.router.navigate(['/reAnswer',this.CategoryID, this.QuestionID,]);
   }
   rename(ChoiceID:number){
     this.router.navigate(['/rename',this.CategoryID, this.QuestionID, ChoiceID]);

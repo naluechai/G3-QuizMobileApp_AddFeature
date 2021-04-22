@@ -9,6 +9,7 @@ import { EditComponent } from './edit/edit.component'
 import { DetailCategoryComponent } from './detailCategory/detailCategory.component'
 import { DetailQuestionComponent } from './detailQuestion/detailQuestion.component'
 import { RenameComponent } from'./rename/rename.component'
+import { ReAnswerComponent} from './reanswer/reanswer.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'edit', component: EditComponent},
   { path: 'detail/:id', component : DetailCategoryComponent},
   { path: 'detail/:id/:questionId', component : DetailQuestionComponent},
-  { path: 'rename/:id/:questionId/:choiceId', component : RenameComponent}
+  { path: 'rename/:id/:questionId/:choiceId', component : RenameComponent},
+  { path: 'reAnswer/:id/:questionId', component: ReAnswerComponent}
 ]
 
 @NgModule({

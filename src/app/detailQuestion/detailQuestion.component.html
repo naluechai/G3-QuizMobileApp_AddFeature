@@ -2,7 +2,7 @@
     <ActionItem (tap) = "renameQuestion()" android.systemIcon="ic_menu_edit" ios.position="right" ></ActionItem>
 </ActionBar>
 
-<GridLayout rows="auto, *">
+<GridLayout rows="auto, * ">
     <GridLayout row =0 columns="* , auto" >
         <TextField class="txt1"[(ngModel)]="choiceName" hint="New Choice Name" col=0></TextField>
         <Image class="add_item" src="~/app/img/add.png" (tap) = "addChoice()" col=1></Image>
@@ -20,10 +20,10 @@
             </ng-template>
         </ListView>
         <StackLayout>
-            <TextField class="txt2" [(ngModel)] = "answer" ></TextField>
             <Button class="QuestionButton" text="Change Answer" (tap) = "changeAnswer()" ></Button>
 
             <button class = "back" text="back" (tap) = "back()"></button>
         </StackLayout>
     </StackLayout>
 </GridLayout>
+
