@@ -109,7 +109,7 @@ export class CategoryService {
   )
   },
   { id: 4 , name: "National Flag", questions: new Array<QuestionForm>(
-    { id:1, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/1.png" ,choice: new Array<ChoiceForm>(
+    { id:1, question:"Which country does this flag belong to? ", imgPath:"~/app/img/question/1.jpg" ,choice: new Array<ChoiceForm>(
       { id:1, choice:"Sweden"},
       { id:2, choice:"Ireland"},
       { id:3, choice:"British"},

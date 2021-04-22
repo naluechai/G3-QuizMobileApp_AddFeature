@@ -2,6 +2,8 @@
     height: 200px;
     font-size: 30px;
     background-color: white;
+    padding: 10;
+}
 }
 .add_item{
     width: 75px;
@@ -12,7 +14,11 @@
     font-size: 30;
 }
 .del-btn{
-    color :black;
+    color :red;
     font-size:16;
     background-color: white;
+}
+.back{
+    border-radius: 50px;
+    font-size:16;
 }
