@@ -48,6 +48,7 @@ export class PlayComponent implements OnInit {
         this.selected_question = this.selected_category.questions[this.number];
         this.number+=1;
       }
+      console.log("Question:",this.number,"of",this.lengthQuestion)
       console.log("Score",this.score)
     }
     checkImage(){

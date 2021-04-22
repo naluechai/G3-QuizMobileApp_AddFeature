@@ -187,7 +187,7 @@ export class CategoryService {
       { id:3, choice:"Spain"},
       { id:4, choice:"Thailand"}
     ),
-    answer:2
+    answer:1
     },
   )
   }
