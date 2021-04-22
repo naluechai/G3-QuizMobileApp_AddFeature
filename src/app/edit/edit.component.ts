@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Router } from '@angular/router';
+import { Dialogs } from "@nativescript/core";
 
 import { CategoryService } from '../category/category.service'
 import { CategoryForm , QuestionForm} from '../category/category' 
@@ -32,7 +33,17 @@ export class EditComponent implements OnInit {
     this.router.navigate(['/menu']);
   }
   delCategory( inputID:number ) {
-    this.categoryService.deleteCategory(inputID)
-    this.getCategoryData();
+    Dialogs.confirm({
+      title: "Delete Question",
+      message: "Are you sure to Delete this Quiz?",
+      cancelButtonText: "Cancel",
+      okButtonText: "Comfirm"
+    }).then(r =>{
+      console.log(r);
+      if(r){
+        this.categoryService.deleteCategory(inputID)
+        this.getCategoryData();
+      }
+    });   
   }
 }

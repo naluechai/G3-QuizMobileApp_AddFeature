@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Router } from '@angular/router';
+import { Dialogs } from "@nativescript/core";
 
 import { CategoryService } from '../category/category.service'
 import { CategoryForm , QuestionForm} from '../category/category' 
@@ -21,8 +22,19 @@ export class DetailCategoryComponent implements OnInit {
     this.selected_category = this.categoryService.getSelectedCategoryData(this.categoryID);
   }
   delQuestion( QuizID:number , QuestionID:number){
-    this.categoryService.deleteQuestion(QuizID, QuestionID)
-    this.router.navigate(['/detail',QuizID]);
+    var questionName = this.categoryService.getSelectedQuestionData( QuizID, QuestionID).question
+    Dialogs.confirm({
+      title: "Delete Question",
+      message: "Are you sure to Delete this question ?",
+      cancelButtonText: "Cancel",
+      okButtonText: "Comfirm"
+    }).then(r =>{
+      console.log(r);
+      if(r){
+        this.categoryService.deleteQuestion(QuizID, QuestionID)
+        this.router.navigate(['/detail',QuizID]);
+      }
+    });   
   }
   addQuestion(){
     if (this.questionName !=""){

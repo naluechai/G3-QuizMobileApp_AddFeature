@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Router } from '@angular/router';
+import { Dialogs } from "@nativescript/core";
 
 import { CategoryService } from '../category/category.service'
 import { CategoryForm , QuestionForm} from '../category/category' 
@@ -28,9 +29,20 @@ export class DetailQuestionComponent implements OnInit {
     this.answer = this.selected_question.answer
   }
   delChoice( ChoiceID:number){
-    console.log(ChoiceID)
-    this.categoryService.deleteChoice(this.CategoryID, this.QuestionID, ChoiceID)
-    this.selected_question = this.categoryService.getSelectedQuestionData( this.CategoryID, this.QuestionID)
+    var questionName = this.categoryService.getSelectedChoiceData(  this.CategoryID, this.QuestionID, ChoiceID).choice
+    Dialogs.confirm({
+      title: "Delete Choice",
+      message: "Are you sure to Delete this Choice",
+      cancelButtonText: "Cancel",
+      okButtonText: "Comfirm"
+    }).then(r =>{
+      console.log(r);
+      if(r){
+        this.categoryService.deleteChoice(this.CategoryID, this.QuestionID, ChoiceID)
+        this.selected_question = this.categoryService.getSelectedQuestionData( this.CategoryID, this.QuestionID)
+      }
+    });  
+
   }
   addChoice(){
     if (this.choiceName !=""){
