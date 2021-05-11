@@ -16,11 +16,13 @@ export class HistoryService {
   )
   constructor(){
     const LogData = AppSettings.getString("LogData");
-    if(LogData != null && LogData != undefined){
+    if(LogData.length == 63){
       this.saveLog = this.test_Log;
-      AppSettings.setString("LogData", JSON.stringify(this.saveLog));
-    }
-	console.log(this.saveLog)
+	  this.saveData();
+    }else{
+		console.log(AppSettings.getString("Logdata"))
+		this.saveLog = JSON.parse(AppSettings.getString("Logdata"))
+	}
   }
   saveLog : Array<LogForm>
   saveData(){

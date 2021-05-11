@@ -1,0 +1,12 @@
+.btn{
+    width: 200 ;
+    height: 75;
+    color: white ;
+    background-color: grey;
+    font-size: 30px;
+    border-radius: 50px;
+}
+.list{
+    color: white;
+    font-size: 30;
+  }

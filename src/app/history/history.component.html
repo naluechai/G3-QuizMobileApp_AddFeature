@@ -1,11 +1,11 @@
-<ActionBar flat="true" title=""></ActionBar>
+<ActionBar flat="true" title="History Log"></ActionBar>
 <FlexLayout class="flex">
     <StackLayout >
-    <ListView height="450" [items]="Log_List">
+    <ListView height="600" [items]="Log_List">
         <ng-template let-item="item">
           <StackLayout>
-            <Label class="quizlist" [text]="item.quiz_name" ></Label>
-            <Label class="quizlist" [text]="item.score" ></Label>
+            <Label class="list" [text]="'Quiz:'+item.quiz_name" ></Label>
+            <Label class="list" [text]="'Score:'+item.score" ></Label>
           </StackLayout>
         </ng-template>
       </ListView>
