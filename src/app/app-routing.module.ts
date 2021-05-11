@@ -10,6 +10,7 @@ import { DetailCategoryComponent } from './detailCategory/detailCategory.compone
 import { DetailQuestionComponent } from './detailQuestion/detailQuestion.component'
 import { RenameComponent } from'./rename/rename.component'
 import { ReAnswerComponent} from './reanswer/reanswer.component'
+import { HistoryComponent } from './history/history.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'detail/:id', component : DetailCategoryComponent},
   { path: 'detail/:id/:questionId', component : DetailQuestionComponent},
   { path: 'rename/:id/:questionId/:choiceId', component : RenameComponent},
-  { path: 'reAnswer/:id/:questionId', component: ReAnswerComponent}
+  { path: 'reAnswer/:id/:questionId', component: ReAnswerComponent},
+  { path: 'log' , component:HistoryComponent}
 ]
 
 @NgModule({
