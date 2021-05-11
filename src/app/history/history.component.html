@@ -1,1 +1,14 @@
-<Label class="history" text="Hello HistoryComponent!"></Label>
+<ActionBar flat="true" title=""></ActionBar>
+<FlexLayout class="flex">
+    <StackLayout >
+    <ListView height="450" [items]="Log_List">
+        <ng-template let-item="item">
+          <StackLayout>
+            <Label class="quizlist" [text]="item.quiz_name" ></Label>
+            <Label class="quizlist" [text]="item.score" ></Label>
+          </StackLayout>
+        </ng-template>
+      </ListView>
+        <Button class="btn" text="Back" [nsRouterLink] = "['/menu']"></Button>
+    </StackLayout>
+</FlexLayout>

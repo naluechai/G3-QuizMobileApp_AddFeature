@@ -11,8 +11,10 @@ import { LogForm } from './history'
 })
 
 export class HistoryComponent implements OnInit {
+	Log_List : Array<LogForm>;
+	constructor(private historyService :HistoryService) { }
 
-	constructor() { }
-
-	ngOnInit() { }
+	ngOnInit() {
+		this.Log_List = this.historyService.getLog()
+	}
 }
