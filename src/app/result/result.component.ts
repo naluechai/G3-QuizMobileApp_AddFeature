@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { CategoryService } from '../category/category.service'
 import { CategoryForm , QuestionForm} from '../category/category' 
+import { HistoryService } from '../history/history.service'
 
 @Component({
   selector: 'ns-result',
@@ -17,11 +18,12 @@ export class ResultComponent implements OnInit {
   maxScore:number = 0;
   id = this.route.snapshot.params.id;
 
-  constructor(private route: ActivatedRoute, private categoryService : CategoryService) {}
+  constructor(private route: ActivatedRoute, private categoryService : CategoryService , private historyService : HistoryService ) {}
   ngOnInit(): void {
     const id = +this.route.snapshot.params.id
     this.selected_category = this.categoryService.getSelectedCategoryData(id);
     this.result = +this.route.snapshot.params.score
     this.maxScore = this.selected_category.questions.length
+    this.historyService.addLog(this.selected_category.name,this.result);
   }
 }

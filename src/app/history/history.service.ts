@@ -6,7 +6,7 @@ import * as AppSettings from '@nativescript/core/application-settings'
   providedIn: 'root',
 })
 export class HistoryService {
-    private temp_Log= new Array<LogForm> ({ 
+    private test_Log= new Array<LogForm> ({ 
 		quiz_name:"first",
 		score : 2
 	},
@@ -17,7 +17,7 @@ export class HistoryService {
   constructor(){
     const LogData = AppSettings.getString("LogData");
     if(LogData != null && LogData != undefined){
-      this.saveLog = this.temp_Log;
+      this.saveLog = this.test_Log;
       AppSettings.setString("LogData", JSON.stringify(this.saveLog));
     }
 	console.log(this.saveLog)
