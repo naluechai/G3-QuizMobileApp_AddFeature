@@ -3,6 +3,7 @@
     <StackLayout >
         <label textAlignment="center" class="ResultLabel1" text="Quiz Done"></label>
         <Label textAlignment="center" class="ResultLabel2" [text] = "'score: '+ result"></Label>
+        <Label textAlignment="center" class="ResultLabel2" [text] = "'Time: '+ time"></Label>
         <Label textAlignment="center" class="ResultLabel3" [text] = "'from: '+ maxScore "></Label>
         <Button class="btn" text="Retry" [nsRouterLink] = "['/play/'+id]"></Button>
         <Button class="btn" text="Menu" [nsRouterLink] = "['/menu']"></Button>

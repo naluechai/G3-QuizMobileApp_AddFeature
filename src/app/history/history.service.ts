@@ -8,12 +8,12 @@ import * as AppSettings from '@nativescript/core/application-settings'
 export class HistoryService {
     private test_Log= new Array<LogForm> ({ 
 		quiz_name:"",
+    time : '0',
 		score : 0
 	}
   )
   constructor(){
     const LogData = AppSettings.getString("LogData");
-    console.log('LogData:'+LogData)
     
     if(LogData.length == 63){
       this.saveLog = this.test_Log;
@@ -27,9 +27,10 @@ export class HistoryService {
   saveData(){
     AppSettings.setString("LogData", JSON.stringify(this.saveLog))
   }
-  addLog(name:string,score:number){
+  addLog(name:string,time:string,score:number){
 	this.saveLog.push({
 		quiz_name: name,
+    time:time,
 		score:score
   	})
 	  this.saveData();
